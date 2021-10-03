@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="973c5739-3994-41d9-99ba-2c602014c513" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assets/Animations/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Animations/Character.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Animations/Happy Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Animations/Happy Idle.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Animations/Run Forward.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Animations/Run Forward.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/Clouds.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/Clouds.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/Material.003.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/Material.003.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/dark trunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/dark trunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/darken leafs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/darken leafs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/earth.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/earth.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/green tree.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/green tree.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/pine tree green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/pine tree green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/trunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Materials/trunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/Material.003.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/Material.003.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/dark trunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/dark trunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/darken leafs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/darken leafs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/earth.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/earth.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/green tree.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/green tree.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/pine brown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/pine brown.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/pine tree green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/pine tree green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/trunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Customizable Skybox/Model/Materials/trunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/DirtSolid.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/DirtSolid.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/OilSolid.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/OilSolid.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/SmokeSolidGrey.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/SmokeSolidGrey.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/StoneSolid.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/StoneSolid.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/VerticalGradient01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/VerticalGradient01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/VerticalGradient02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/VerticalGradient02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Materials/White.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Models/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Models/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Doozy/Examples/Models/Materials/verticalgradient2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Doozy/Examples/Models/Materials/verticalgradient2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_dirt.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_dirt.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_metal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_stone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_stone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_wood.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/Bullet Surfaces/dev_material_wood.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/card.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/card.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_big.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_big.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_emojis.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_emojis.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_half.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_half.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_miniscene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_miniscene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_small.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/dev_small.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/devcrate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/devcrate.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/devtarget.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Demo/Materials/devtarget.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Decals/decal_atlas_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Decals/decal_atlas_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Decals/decal_gibs_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Decals/decal_gibs_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Decals/decal_scorch_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Decals/decal_scorch_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_angry.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_angry.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_bigsmile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_bigsmile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cool.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cool.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cry.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cry.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cute.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cute.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_derp.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_derp.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_disappoint.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_disappoint.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_drool.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_drool.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_happy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_happy.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_heart.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_heart.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_kiss.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_kiss.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughcry.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughcry.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughsweatdrop.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughsweatdrop.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_poop.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_poop.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sad.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sad.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_shocked.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_shocked.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_silly.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_silly.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_tearyeyes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_tearyeyes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwO.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwO.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwOEyebrow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwOEyebrow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_UwU.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_UwU.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_XD.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_XD.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_angryscream.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_angryscream.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_blush.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_blush.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_crazy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_crazy.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_cute.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_cute.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_dead.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_dead.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_deadtired.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_deadtired.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_derpgasp.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_derpgasp.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_evil.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_evil.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_expressionless.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_expressionless.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_injured.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_injured.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_kissyface.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_kissyface.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_mad.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_mad.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_nauseous.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_nauseous.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_pleading.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_pleading.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sadcry.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sadcry.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_scared.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_scared.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillyhappy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillyhappy.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillysmile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillysmile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillywink.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillywink.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sinister.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sinister.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sleep.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sleep.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_starstruck.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_starstruck.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsdown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsdown.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsup.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsup.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_yawn.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_yawn.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/em_text_ah_zz.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/em_text_ah_zz.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/em_text_haha.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Emojis/em_text_haha.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Explosions/explosion_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Explosions/explosion_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Explosions/explosion_spritesheet_3x3_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Explosions/explosion_spritesheet_3x3_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/candle_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/candle_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/candle_soft2_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/candle_soft2_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/candle_soft_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/candle_soft_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/fire_ground_3x3_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/fire_ground_3x3_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/fire_soft_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/fire_soft_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/fire_soft_blank_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Fire/fire_soft_blank_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart2_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart2_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart2broken_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart2broken_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart2broken_blue_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart2broken_blue_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Hearts/heart_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat01_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat01_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat01_animated_3x3_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat01_animated_3x3_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat02_animated_3x3_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat02_animated_3x3_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat03_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/splat03_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/water_3x3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/water_3x3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/water_soft_3x3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Liquid/water_soft_3x3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Portals/portal_glow_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Portals/portal_glow_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull2_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull2_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull3_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull3_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull4_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull4_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull_evil_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull_evil_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull_love_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Skulls/skull_love_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_outline_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_outline_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_outlined_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_outlined_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_outlined_colored_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Stars/star_outlined_colored_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash01_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash01_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash02_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash02_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash03_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash03_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash_circle01_AB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Sword/slash_circle01_AB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/crack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/crack.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/flash_white.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/flash_white.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/ka-pow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/ka-pow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/pow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/pow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_white.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_white.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/sharp_yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/smack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/smack.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/zzzap.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Epic Toon FX/Materials/Misc/Text/zzzap.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/JMO Assets/Toony Colors Pro/Demo TCP2/Hybrid Shader Demo Assets/Robot Standard.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/JMO Assets/Toony Colors Pro/Demo TCP2/Hybrid Shader Demo Assets/Robot Standard.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Scenes/Game.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/PhysicsMovement.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1yvBEEo8Ls1qRgRRqByRPckXgD1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="973c5739-3994-41d9-99ba-2c602014c513" name="Default Changelist" comment="" />
+      <created>1633122068342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633122068342</updated>
+      <workItem from="1633122083284" duration="1344000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
