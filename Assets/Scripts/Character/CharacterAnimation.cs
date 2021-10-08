@@ -1,5 +1,14 @@
+using System;
 using Movement;
 using UnityEngine;
+
+[Serializable]
+public struct AnimationStates
+{
+    public const string Run = nameof(Run);
+    public const string Finish = nameof(Finish);
+    public const string Die = nameof(Die);
+}
 
 public class CharacterAnimation : MonoBehaviour
 {
@@ -9,13 +18,12 @@ public class CharacterAnimation : MonoBehaviour
     
     private void FixedUpdate()
     {
-        _animator.SetBool(AnimationStates.Run, _movement.IsMoving);
-        _animator.SetBool(AnimationStates.Finish, _levelProgress.LevelComplete);
+        SetState(AnimationStates.Run, _movement.IsMoving);
+        // _animator.SetBool(AnimationStates.Finish, _levelProgress.LevelComplete);
     }
-    
-    private struct AnimationStates
+
+    public void SetState(string stateName, bool stateValue)
     {
-        public const string Run = nameof(Run);
-        public const string Finish = nameof(Finish);
+        _animator.SetBool(stateName, stateValue);
     }
 }

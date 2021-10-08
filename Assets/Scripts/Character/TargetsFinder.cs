@@ -7,27 +7,35 @@ namespace Movement
 {
     public class TargetsFinder : MonoBehaviour
     {
-        public Action<List<Enemy>> EnemisFinded;
-
+        public Action<Enemy> EnemyFinded;
+        public Action NotEnoughTargets;
+        
+        [SerializeField] private LayerMask _enemyLayer;
         [SerializeField] private List<Enemy> _targets;
 
         public List<Enemy> Targets => _targets; // to refactor
         
         private void OnTriggerEnter(Collider other)
         {
+            if (((1 << other.gameObject.layer) & _enemyLayer) == 0) return;
+
+            Enemy enemy = other.GetComponent<Enemy>();
             
-            if (TryGetComponent(out Enemy enemy) == true)
-            {
-                _targets.Add(enemy);
-                enemy.Die += () => OnEnemyDied(enemy);
-            }
+            _targets.Add(enemy);
+            enemy.Die += () => OnEnemyDied(enemy);
+            EnemyFinded?.Invoke(enemy);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (TryGetComponent(out Enemy enemy) == true)
+            if (((1 << other.gameObject.layer) & _enemyLayer) == 0) return;
+
+            Enemy enemy = other.GetComponent<Enemy>();
+            _targets.Remove(enemy);
+
+            if (_targets.Count == 0)
             {
-                _targets.Remove(enemy);
+                NotEnoughTargets?.Invoke();
             }
         }
         
