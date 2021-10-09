@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Enemies;
 using Movement;
 using RootMotion.FinalIK;
@@ -23,6 +24,8 @@ namespace Weapon
 
         [SerializeField] private Enemy _currentTarget;
 
+        private Coroutine _shooting;
+        
         private void OnEnable()
         {
             _finder.EnemyFinded += OnTargetFinded;
@@ -37,7 +40,13 @@ namespace Weapon
 
         private void Update()
         {
-            PreparationShoot();
+            if (_currentTarget != null)
+            {
+                if (_shooting == null)
+                {
+                    _shooting = StartCoroutine(Shooting());
+                }
+            }
         }
 
         private void OnTargetFinded(Enemy enemy)
@@ -52,9 +61,7 @@ namespace Weapon
 
         private void PreparationShoot()
         {
-            if (_currentTarget != null)
-            {
-                RaycastHit hit;
+            RaycastHit hit;
                 if (Physics.Raycast(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward), out hit, _distance, _targetLayerMask))
                 {
                     Debug.DrawRay(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
@@ -65,19 +72,23 @@ namespace Weapon
                         {
                             Shoot(direction);
                         }
-                    
                 }
-            }
         }
 
         private void Shoot(Vector3 direction)
         {
+            _muzzleFlare.Play(true);
             Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.identity);
             bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
+        }
 
-            _shootReady = false;
-            
-            DelayedCallUtil.DelayedCall(_shootDelay, () => _shootReady = true);
+        private IEnumerator Shooting()
+        {
+            while (_currentTarget != null)
+            {
+                PreparationShoot();
+                yield return new WaitForSeconds(_shootDelay);
+            }
         }
         
         private void OnEnemyDie(Enemy enemy)

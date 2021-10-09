@@ -1,4 +1,5 @@
 ﻿using System;
+using _GAME.Common;
 using UnityEngine;
 
 namespace Enemies
@@ -6,11 +7,11 @@ namespace Enemies
     public class Enemy : MonoBehaviour
     {
         public Action Die;
-        public bool dead = false;
-        
+
         [SerializeField] private CharacterAnimation _characterAnimation;
         [SerializeField] private Transform _hitTarget;
-
+        [SerializeField] private Ragdoll _ragdoll;
+        
         public Transform HitTarget => _hitTarget;
 
         [ContextMenu("Die")]
@@ -32,8 +33,8 @@ namespace Enemies
 
         private void Dead()
         {
-            _characterAnimation.SetState(AnimationStates.Die, true);
-            dead = true;
+            // _characterAnimation.SetState(AnimationStates.Die, true);
+            _ragdoll.ActivateRagdoll();
         }
     }
 }
