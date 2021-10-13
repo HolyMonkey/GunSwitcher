@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Movement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +11,11 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private Image _rightGun;
     [SerializeField] private List<Weapon> _weapons;
 
+    [SerializeField] private TargetsFinder _finder;
+    
     // [SerializeField] private SwipeDetection _swipeDetection;
     
     [SerializeField] private int _currentWeaponIndex;
-
-    private void Start()
-    {
-        Debug.Log(_weapons.Count);
-    }
 
     private void OnEnable()
     {
@@ -60,6 +58,14 @@ public class SwitchGun : MonoBehaviour
         {
             _currentWeaponIndex = _weapons.Count - 1;
         }
+
+        foreach (var weapon in _weapons)
+        {
+            weapon.WeaponModel.SetActive(false);
+        }
+        _weapons[_currentWeaponIndex].WeaponModel.SetActive(true);
+        
+        _finder.UpdateTrigger();
         
         DrawIcons();
     }
@@ -69,7 +75,7 @@ public class SwitchGun : MonoBehaviour
         int left = _currentWeaponIndex == 0 ? _weapons.Count - 1 : _currentWeaponIndex - 1;
         int right = _currentWeaponIndex == _weapons.Count -1 ? 0 : _currentWeaponIndex + 1;
 
-        Debug.Log($"Left {left}, Right {right}");
+        // Debug.Log($"Left {left}, Right {right}");
         
         _leftGun.sprite = _weapons[left].Icon;
         _rightGun.sprite = _weapons[right].Icon;
@@ -80,5 +86,6 @@ public class SwitchGun : MonoBehaviour
     {
         public string Name;
         public Sprite Icon;
+        public GameObject WeaponModel;
     }
 }

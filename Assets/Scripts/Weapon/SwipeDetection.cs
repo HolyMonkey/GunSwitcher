@@ -89,7 +89,6 @@ public class SwipeDetection : MonoBehaviour
                 }
                 
                 SwipeEvent?.Invoke(direction);
-                DenugSWIPES(direction);
             }
             
             ResetSwipe();
