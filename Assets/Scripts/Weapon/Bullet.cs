@@ -1,5 +1,4 @@
 ﻿using System;
-using Enemies;
 using UnityEngine;
 
 namespace Weapon
@@ -19,8 +18,9 @@ namespace Weapon
             if (other.gameObject.TryGetComponent(out Enemy enemy))
             {
                 enemy.Die?.Invoke();
-                Destroy(gameObject);
             }
+            
+            Destroy(gameObject);
         }
     }
 }

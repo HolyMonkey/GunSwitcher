@@ -2,39 +2,37 @@
 using _GAME.Common;
 using UnityEngine;
 
-namespace Enemies
+public class Enemy : MonoBehaviour
 {
-    public class Enemy : MonoBehaviour
+    public Action Die;
+
+    [SerializeField] private EnemyAnimation _enemyAnimation;
+    [SerializeField] private Transform _hitTarget;
+    [SerializeField] private Ragdoll _ragdoll;
+
+    [SerializeField] private bool _alive = true;
+    
+    public Transform HitTarget => _hitTarget;
+
+    [ContextMenu("Die")]
+    public void DieFast()
     {
-        public Action Die;
+        Die?.Invoke();
+    }
 
-        [SerializeField] private CharacterAnimation _characterAnimation;
-        [SerializeField] private Transform _hitTarget;
-        [SerializeField] private Ragdoll _ragdoll;
-        
-        public Transform HitTarget => _hitTarget;
+    private void OnEnable()
+    {
+        Die += Dead;
+    }
 
-        [ContextMenu("Die")]
-        public void DieFast()
-        {
-            Die?.Invoke();
-            // _characterAnimation.SetState(AnimationStates.Die, true);
-        }
+    private void OnDisable()
+    {
+        // throw new NotImplementedException();
+    }
 
-        private void OnEnable()
-        {
-            Die += Dead;
-        }
-
-        private void OnDisable()
-        {
-            // throw new NotImplementedException();
-        }
-
-        private void Dead()
-        {
-            // _characterAnimation.SetState(AnimationStates.Die, true);
-            _ragdoll.ActivateRagdoll();
-        }
+    private void Dead()
+    {
+        _alive = false;
+        _ragdoll.ActivateRagdoll();
     }
 }

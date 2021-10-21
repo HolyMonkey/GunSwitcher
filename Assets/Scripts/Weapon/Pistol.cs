@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Enemies;
 using Movement;
 using RootMotion.FinalIK;
 using UnityEditor.SearchService;
@@ -38,17 +37,6 @@ namespace Weapon
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
         }
 
-        private void Update()
-        {
-            if (_currentTarget != null)
-            {
-                if (_shooting == null)
-                {
-                    _shooting = StartCoroutine(Shooting());
-                }
-            }
-        }
-
         private void OnTargetFinded(Enemy enemy)
         {
             enemy.Die += () => OnEnemyDie(enemy);
@@ -68,10 +56,7 @@ namespace Weapon
                     
                         Vector3 direction = (hit.point - _shootPosition.position).normalized;
                         
-                        if (_shootReady == true)
-                        {
-                            Shoot(direction);
-                        }
+                        Shoot(direction);
                 }
         }
 
@@ -93,10 +78,18 @@ namespace Weapon
         
         private void OnEnemyDie(Enemy enemy)
         {
-            if (enemy == _currentTarget)
+            if (_shooting != null)
             {
-                PickTarget();
+                StopCoroutine(_shooting);
+                _shooting = null;
             }
+
+            PickTarget();
+            
+            // if (enemy == _currentTarget)
+            // {
+            //     PickTarget();
+            // }
         }
 
         private void OnNotEnoughTargets()
@@ -118,6 +111,14 @@ namespace Weapon
                 _currentTarget = null;
                 _aimController.target = null;
                 _aimController.weight = 0;
+            }
+            
+            if (_currentTarget != null)
+            {
+                if (_shooting == null)
+                {
+                    _shooting = StartCoroutine(Shooting());
+                }
             }
         }
     }
