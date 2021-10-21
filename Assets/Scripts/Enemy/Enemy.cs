@@ -1,5 +1,6 @@
 ﻿using System;
 using _GAME.Common;
+using RootMotion.FinalIK;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,7 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyAnimation _enemyAnimation;
     [SerializeField] private Transform _hitTarget;
     [SerializeField] private Ragdoll _ragdoll;
-
+    [SerializeField] private AimIK _aim;
+    
     [SerializeField] private bool _alive = true;
     
     public Transform HitTarget => _hitTarget;
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     private void Dead()
     {
+        _aim.enabled = false;
         _alive = false;
         _ragdoll.ActivateRagdoll();
     }

@@ -8,6 +8,8 @@ namespace Movement
     {
         public Action<Enemy> EnemyFinded;
         public Action NotEnoughTargets;
+
+        [SerializeField] private Collider _trigger;
         
         [SerializeField] private LayerMask _enemyLayer;
         [SerializeField] private List<Enemy> _targets;
@@ -36,6 +38,12 @@ namespace Movement
             {
                 NotEnoughTargets?.Invoke();
             }
+        }
+
+        public void UpdateTrigger()
+        {
+            _trigger.enabled = false;
+            _trigger.enabled = true;
         }
         
         private void OnEnemyDied(Enemy enemy)

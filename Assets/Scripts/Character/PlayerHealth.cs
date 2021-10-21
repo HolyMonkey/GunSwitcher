@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health -= damage;
+        TryDie();
     }
 
     private void TryDie()
