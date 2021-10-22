@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Movement;
+using RootMotion.FinalIK;
 using UnityEngine;
 using UnityEngine.UI;
 using Weapon;
@@ -12,6 +13,9 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private List<WeaponChangerItem> _leftGuns;
     [SerializeField] private List<WeaponChangerItem> _rightGuns;
     [SerializeField] private List<Weapon> _weapons;
+
+    [SerializeField] private AimController _aim;
+    [SerializeField] private LimbIK _secondHand;
     
     [SerializeField] private TargetsFinder _finder;
 
@@ -89,6 +93,8 @@ public class SwitchGun : MonoBehaviour
         
         _finder.UpdateTrigger();
 
+        _aim.targetSwitchSmoothTime = _weapons[_currentWeaponIndex]._smoothTime;
+        _secondHand.solver.target = _weapons[_currentWeaponIndex].HandPointWeapon.transform;
         
         DrawIcons();
     }
@@ -106,8 +112,6 @@ public class SwitchGun : MonoBehaviour
         WeaponChangerItem leftGun = _leftGuns.First(i => i.Id == _weapons[left].Id);
         WeaponChangerItem rightGun = _rightGuns.First(i => i.Id == _weapons[right].Id);
 
-        Debug.Log($"Left {left}, Right {right}");
-
         leftGun.gameObject.SetActive(true);
         rightGun.gameObject.SetActive(true);
     }
@@ -119,7 +123,9 @@ public class SwitchGun : MonoBehaviour
 
         public Weapons Id;
         public GameObject WeaponModel;
-
+        public GameObject HandPointWeapon;
+        public float _smoothTime;
+        
         public Sprite Icon;
     }
 }
