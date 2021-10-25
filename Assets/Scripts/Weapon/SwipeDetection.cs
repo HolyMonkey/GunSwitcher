@@ -89,18 +89,12 @@ public class SwipeDetection : MonoBehaviour
                 }
                 
                 SwipeEvent?.Invoke(direction);
-                DenugSWIPES(direction);
             }
             
             ResetSwipe();
         }
     }
 
-    private void DenugSWIPES(Vector2 direction)
-    {
-        Debug.Log(direction);
-    }
-    
     private void ResetSwipe()
     {
         _isSwiping = false;
