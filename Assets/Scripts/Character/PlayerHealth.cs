@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float _health;
-
+    [SerializeField] private bool _isAlive => _health > 0;
+    
     public void TakeDamage(float damage)
     {
         _health -= damage;
@@ -12,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void TryDie()
     {
-        if (_health <= 0)
+        if (_isAlive == false)
         {
             
         }

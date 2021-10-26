@@ -19,6 +19,11 @@ namespace Weapon
             {
                 enemy.Die?.Invoke();
             }
+
+            if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))
+            {
+                Debug.Log("Shot");
+            }
             
             Destroy(gameObject);
         }

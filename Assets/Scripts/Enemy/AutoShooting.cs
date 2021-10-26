@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Movement;
 using RootMotion.FinalIK;
 using UnityEngine;
@@ -10,39 +11,21 @@ namespace _GAME.Common
     {
         [SerializeField] private int _distance;
         [SerializeField] private float _shootDelay = 0.5f;
-        [SerializeField] private bool _shootReady = true;
         [SerializeField] private LayerMask _targetLayerMask;
         
         [SerializeField] private ParticleSystem _muzzleFlare;
         [SerializeField] private Bullet _bulletPrefab;
         [SerializeField] private Transform _shootPosition;
 
-        [SerializeField] private AimController _aimController;
-        [SerializeField] private TargetsFinder _finder;
-
-        [SerializeField] private Enemy _currentTarget;
+        [SerializeField] private AimController _aim;
 
         private Coroutine _shooting;
-        
-        private void OnEnable()
-        {
-            _finder.EnemyFinded += OnTargetFinded;
-            _finder.NotEnoughTargets += OnNotEnoughTargets;
-        }
 
-        private void OnDisable()
+        private void Update()
         {
-            _finder.EnemyFinded -= OnTargetFinded;
-            _finder.NotEnoughTargets -= OnNotEnoughTargets;
-        }
-
-        private void OnTargetFinded(Enemy enemy)
-        {
-            enemy.Die += () => OnEnemyDie(enemy);
-            
-            if (_currentTarget == null)
+            if (_aim.target != null)
             {
-                PickTarget();
+                PreparationShoot();
             }
         }
 
@@ -64,61 +47,6 @@ namespace _GAME.Common
             _muzzleFlare.Play(true);
             Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.identity);
             bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
-        }
-
-        private IEnumerator Shooting()
-        {
-            while (_currentTarget != null)
-            {
-                PreparationShoot();
-                yield return new WaitForSeconds(_shootDelay);
-            }
-        }
-        
-        private void OnEnemyDie(Enemy enemy)
-        {
-            if (_shooting != null)
-            {
-                StopCoroutine(_shooting);
-                _shooting = null;
-            }
-
-            PickTarget();
-            
-            // if (enemy == _currentTarget)
-            // {
-            //     PickTarget();
-            // }
-        }
-
-        private void OnNotEnoughTargets()
-        {
-            _aimController.target = null;
-            _aimController.weight = 0;
-        }
-
-        private void PickTarget()
-        {
-            if (_finder.Targets.Count > 0)
-            {
-                _currentTarget = _finder.Targets[0];
-                _aimController.target = _currentTarget.HitTarget;
-                _aimController.weight = 1;
-            }
-            else
-            {
-                _currentTarget = null;
-                _aimController.target = null;
-                _aimController.weight = 0;
-            }
-            
-            if (_currentTarget != null)
-            {
-                if (_shooting == null)
-                {
-                    _shooting = StartCoroutine(Shooting());
-                }
-            }
         }
     }
 }
