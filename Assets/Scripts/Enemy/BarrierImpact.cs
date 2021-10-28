@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BarrierImpact : MonoBehaviour
@@ -28,4 +29,11 @@ public class BarrierImpact : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))
+        {
+            playerHealth.TakeDamage(100);
+        }
+    }
 }

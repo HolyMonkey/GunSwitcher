@@ -22,7 +22,8 @@ namespace Weapon
 
             if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))
             {
-                Debug.Log("Shot");
+                Debug.Log("shoot");
+                playerHealth.TakeDamage(50);
             }
             
             Destroy(gameObject);

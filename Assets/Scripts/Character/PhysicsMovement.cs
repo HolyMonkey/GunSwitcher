@@ -5,10 +5,13 @@ namespace Movement
 {
     public class PhysicsMovement : MonoBehaviour
     {
+        public Action<MovingState> StateUpdated;
+        
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private MovingState _currentState;
         
         [SerializeField] private float _speed;
+        [SerializeField] private float _normalSpeed = 3f;
         [SerializeField] private float _woundedSpeed = 1.5f;
             
         public bool IsMoving { get; private set; } = false;
@@ -29,6 +32,20 @@ namespace Movement
         public void PickState(MovingState movingState)
         {
             _currentState = movingState;
+            StateUpdated?.Invoke(_currentState);
+
+            switch (_currentState)
+            {
+                case MovingState.Stop:
+                    _speed = 0;
+                    break;
+                case MovingState.MoveWounded:
+                    _speed = _woundedSpeed;
+                    break;
+                case MovingState.MoveNormal:
+                    _speed = _normalSpeed;
+                    break;
+            }
         }
     }
 }
