@@ -29,12 +29,6 @@ public class CharacterAnimation : MonoBehaviour
         _movement.StateUpdated -= OnMovingStateUpdated;
     }
 
-    private void FixedUpdate()
-    {
-        PickState(AnimationStates.Run, _movement.IsMoving);
-        // _animator.SetBool(AnimationStates.Finish, _levelProgress.LevelComplete);
-    }
-
     public void PickState(string stateName, bool stateValue)
     {
         _animator.SetBool(stateName, stateValue);

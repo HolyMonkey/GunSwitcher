@@ -8,10 +8,13 @@ public class PlayerHealth : MonoBehaviour
     
     [SerializeField] private float _health;
     [SerializeField] private bool _isAlive => _health > 0;
+    [SerializeField] private Transform _hitTarget;
 
     [SerializeField] private PhysicsMovement _physicsMovement;
     [SerializeField] private bool _damageAvailability = true;
-    
+
+    public Transform HitTarget => _hitTarget;
+
     public void TakeDamage(float damage)
     {
         if(_damageAvailability == false) return;

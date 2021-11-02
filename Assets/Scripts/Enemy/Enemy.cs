@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform _hitTarget;
     [SerializeField] private Ragdoll _ragdoll;
     [SerializeField] private AimIK _aim;
+    [SerializeField] private GameObject _laser;
+    [SerializeField] private AutoShooting _autoShooting;
+    [SerializeField] private Collider _weaponTrigger;
     
     [SerializeField] private bool _alive = true;
     
@@ -29,13 +32,16 @@ public class Enemy : MonoBehaviour
 
     private void OnDisable()
     {
-        // throw new NotImplementedException();
+        Die -= Dead;
     }
 
     private void Dead()
     {
+        _weaponTrigger.enabled = false;
         _aim.enabled = false;
         _alive = false;
+        _laser.SetActive(false);
+        _autoShooting.enabled = false;
         _ragdoll.ActivateRagdoll();
     }
 }

@@ -62,11 +62,11 @@ public class SwitchGun : MonoBehaviour
     {
         if (isNext)
         {
-            _currentWeaponIndex++;
+            _currentWeaponIndex--;
         }
         else
         {
-            _currentWeaponIndex--;
+            _currentWeaponIndex++;
         }
 
         if (_currentWeaponIndex > _weapons.Count - 1)

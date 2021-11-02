@@ -16,6 +16,11 @@ namespace Movement
             
         public bool IsMoving { get; private set; } = false;
 
+        private void Start()
+        {
+            PickState(MovingState.MoveNormal);
+        }
+
         private void Update()
         {
             Move(-Vector3.forward);

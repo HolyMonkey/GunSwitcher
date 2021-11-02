@@ -1,13 +1,15 @@
-﻿using RootMotion.FinalIK;
+﻿using System;
+using RootMotion.FinalIK;
 using UnityEngine;
 
 namespace _GAME.Common
 {
     public class EnemiesTrigger : MonoBehaviour
     {
+        public Action TargetFinded;
+        
         [SerializeField] private AimController[] _aims;
-        
-        
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out PlayerHealth playerHealth))
@@ -16,6 +18,8 @@ namespace _GAME.Common
                 {
                     aim.target = playerHealth.transform;
                 }
+                
+                TargetFinded?.Invoke();
             }
         }
 
