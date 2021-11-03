@@ -25,6 +25,8 @@ public class SwitchGun : MonoBehaviour
 
     [SerializeField] private int _currentWeaponIndex;
 
+    public List<Weapon> Weapons => _weapons;
+
     private void Start()
     {
         _guns.AddRange(_leftGuns);

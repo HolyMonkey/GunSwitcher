@@ -6,7 +6,7 @@ using UnityEngine;
 public struct AnimationStates
 {
     public const string Run = nameof(Run);
-    public const string Finish = nameof(Finish);
+    public const string Fight = nameof(Fight);
     public const string Wounded = nameof(Wounded);
     public const string Die = nameof(Die);
 }
