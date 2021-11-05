@@ -22,7 +22,7 @@ namespace Weapon
         [SerializeField] private TargetsFinder _finder;
 
         [SerializeField] private Enemy _currentTarget;
-
+        
         private Coroutine _shooting;
         
         private void OnEnable()

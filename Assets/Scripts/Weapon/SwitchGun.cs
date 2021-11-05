@@ -4,7 +4,6 @@ using System.Linq;
 using Movement;
 using RootMotion.FinalIK;
 using UnityEngine;
-using UnityEngine.UI;
 using Weapon;
 
 
@@ -13,16 +12,12 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private List<WeaponChangerItem> _leftGuns;
     [SerializeField] private List<WeaponChangerItem> _rightGuns;
     [SerializeField] private List<Weapon> _weapons;
-
     [SerializeField] private AimController _aim;
     [SerializeField] private LimbIK _secondHand;
-    
     [SerializeField] private TargetsFinder _finder;
-
     [SerializeField] private List<WeaponChangerItem> _guns;
 
     // [SerializeField] private SwipeDetection _swipeDetection;
-
     [SerializeField] private int _currentWeaponIndex;
 
     public List<Weapon> Weapons => _weapons;
@@ -49,7 +44,10 @@ public class SwitchGun : MonoBehaviour
     }
 
     private void OnSwipe(Vector2 direction)
-    { 
+    {
+        //direction mozet bit' vector2.up 
+        //  nado li ?????????
+        
         if(direction == Vector2.left)
         {
             ChangeWeapon(false);
@@ -122,12 +120,10 @@ public class SwitchGun : MonoBehaviour
     public class Weapon
     {
         public string Name;
-
         public Weapons Id;
         public GameObject WeaponModel;
         public GameObject HandPointWeapon;
         public float _smoothTime;
-        
         public Sprite Icon;
     }
 }

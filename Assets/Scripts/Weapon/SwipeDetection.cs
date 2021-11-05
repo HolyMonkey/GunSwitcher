@@ -10,7 +10,6 @@ public class SwipeDetection : MonoBehaviour
     private Vector2 _swipeDelta;
 
     [SerializeField] private float _deadZone = 80;
-
     [SerializeField] private bool _isSwiping;
     [SerializeField] private bool _isMobile;
 
@@ -25,13 +24,11 @@ public class SwipeDetection : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                // Debug.Log("давн");
                 _isSwiping = true;
                 _tapPosition = Input.mousePosition;
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                // Debug.Log("ап");
                 ResetSwipe();
             }
         }
@@ -51,7 +48,6 @@ public class SwipeDetection : MonoBehaviour
             }
         }
         
-        // Debug.Log(_isSwiping);
         CheckSwipe();
     }
 
@@ -89,7 +85,7 @@ public class SwipeDetection : MonoBehaviour
                 }
                 
                 SwipeEvent?.Invoke(direction);
-            }
+            }   
             
             ResetSwipe();
         }

@@ -10,7 +10,6 @@ namespace Weapon
         [SerializeField] private float speed;
 
         public Rigidbody Rigidbody => _rigidbody;
-
         public float Speed => speed;
 
         private void OnCollisionEnter(Collision other)

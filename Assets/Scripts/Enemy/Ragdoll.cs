@@ -67,6 +67,7 @@ namespace _GAME.Common
             {
                 col.isTrigger = false;
                 col.enabled = true;
+                Physics.IgnoreCollision(col, FindObjectOfType<PlayerHealth>().GetComponent<Collider>(), true);
             }
 
             Animator.enabled = false;

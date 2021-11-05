@@ -5,6 +5,5 @@ namespace Movement
 {
     public class Character : MonoBehaviour
     {
-        
     }
 }

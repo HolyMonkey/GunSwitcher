@@ -1,5 +1,6 @@
 ﻿using System;
 using _GAME.Common;
+using Movement;
 using RootMotion.FinalIK;
 using UnityEngine;
 
@@ -14,9 +15,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject _laser;
     [SerializeField] private AutoShooting _autoShooting;
     [SerializeField] private Collider _weaponTrigger;
-    
+
     [SerializeField] private bool _alive = true;
-    
+
     public Transform HitTarget => _hitTarget;
 
     [ContextMenu("Die")]

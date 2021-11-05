@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class FightHealthBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-
     [SerializeField] private FightHealth _fightHealth;
     
     private void OnEnable()

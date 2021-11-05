@@ -10,7 +10,6 @@ namespace Levels
     {
         [SerializeField] private CinemachineVirtualCameraBase _finishCamera;
         [SerializeField] private CinemachineVirtualCameraBase _playerCamera;
-        
         [SerializeField] private SwitchGun _gunSwicher;
         [SerializeField] private Transform _player;
         [SerializeField] private Transform _fightPoint;
@@ -29,7 +28,7 @@ namespace Levels
                 _player.rotation = _fightPoint.rotation;
                 _animator.PickState(AnimationStates.Fight, true);
                 _secondHand.enabled = false;
-                
+
                 foreach (var weapon in _gunSwicher.Weapons)
                 {
                     weapon.WeaponModel.SetActive(false);
