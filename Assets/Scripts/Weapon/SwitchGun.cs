@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Movement;
 using RootMotion.FinalIK;
+using Unity.Mathematics;
 using UnityEngine;
 using Weapon;
 
@@ -19,6 +20,9 @@ public class SwitchGun : MonoBehaviour
 
     // [SerializeField] private SwipeDetection _swipeDetection;
     [SerializeField] private int _currentWeaponIndex;
+    [SerializeField] private List<GameObject> _gunsTemplates;
+    [SerializeField] private Transform _gunCreation;
+    private WeaponChangerItem _gunTransform;
 
     public List<Weapon> Weapons => _weapons;
 
@@ -29,8 +33,6 @@ public class SwitchGun : MonoBehaviour
         
         PickCurrentWeapon();
         DrawIcons();
-
-        Debug.Log(_weapons.Count);
     }
 
     private void OnEnable()
@@ -45,8 +47,8 @@ public class SwitchGun : MonoBehaviour
 
     private void OnSwipe(Vector2 direction)
     {
-        //direction mozet bit' vector2.up 
-        //  nado li ?????????
+        // vector2.up 
+        //  ?????????
         
         if(direction == Vector2.left)
         {
@@ -62,10 +64,14 @@ public class SwitchGun : MonoBehaviour
     {
         if (isNext)
         {
+            SetTransform(_leftGuns);
+            
             _currentWeaponIndex--;
         }
         else
         {
+            SetTransform(_rightGuns);
+            
             _currentWeaponIndex++;
         }
 
@@ -77,6 +83,9 @@ public class SwitchGun : MonoBehaviour
         {
             _currentWeaponIndex = _weapons.Count - 1;
         }
+        
+        GameObject animationGun = GetGunTemplate();
+        Instantiate(animationGun, _gunTransform.gameObject.transform.position, animationGun.transform.rotation, _gunCreation);
 
         PickCurrentWeapon();
 
@@ -90,7 +99,7 @@ public class SwitchGun : MonoBehaviour
             weapon.WeaponModel.SetActive(false);
         }
         _weapons[_currentWeaponIndex].WeaponModel.SetActive(true);
-        
+
         _finder.UpdateTrigger();
 
         _aim.targetSwitchSmoothTime = _weapons[_currentWeaponIndex]._smoothTime;
@@ -114,6 +123,27 @@ public class SwitchGun : MonoBehaviour
 
         leftGun.gameObject.SetActive(true);
         rightGun.gameObject.SetActive(true);
+    }
+
+    private void SetTransform(List<WeaponChangerItem> guns)
+    {
+        foreach (var gun in guns)
+        {
+            _gunTransform = guns.FirstOrDefault(gun => gun.gameObject.activeSelf == true);
+        }
+    }
+
+    private GameObject GetGunTemplate()
+    {
+        foreach (var gunTemplate in _gunsTemplates)
+        {
+            if (gunTemplate.gameObject.GetComponent<WeaponChangerItem>().Id == _weapons[_currentWeaponIndex].Id)
+            {
+                return gunTemplate;
+            }
+        }
+
+        return null;
     }
 
     [Serializable]
