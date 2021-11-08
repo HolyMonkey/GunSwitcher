@@ -19,10 +19,7 @@ namespace _GAME.Common
         [SerializeField] private EnemiesTrigger _enemiesTrigger;
         
         [SerializeField] private AimController _aim;
-
-        private void Start()
-        {
-        }
+        
 
         private void OnTriggerEnter(Collider other)
         {
@@ -36,7 +33,6 @@ namespace _GAME.Common
 
         // private void PreparationShoot()
         // {
-        //     Debug.Log("hui2");
         //     RaycastHit hit;
         //     
         //     if (Physics.Raycast(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward), out hit, _distance, _targetLayerMask))
@@ -51,7 +47,6 @@ namespace _GAME.Common
 
         private void Shoot(Vector3 direction)
         {
-            Debug.Log("hui");
             _muzzleFlare.Play(true);
             Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.identity);
             bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);

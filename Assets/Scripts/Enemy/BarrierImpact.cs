@@ -4,8 +4,9 @@ using UnityEngine;
 public class BarrierImpact : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] _parts;
-
     [SerializeField] private Collider _mainCollider;
+
+    private ZoneEffect _zoneEffect;
     
     [ContextMenu("Activate")]
     public void ActiveParts()
@@ -16,13 +17,16 @@ public class BarrierImpact : MonoBehaviour
         {
             part.constraints = RigidbodyConstraints.None;
         }
+
+        _zoneEffect = GetComponentInChildren<ZoneEffect>();
+        Destroy(_zoneEffect.gameObject);
     }
 
     [ContextMenu("Deactivate")]
     public void DeactiveParts()
     {
         _mainCollider.enabled = true;
-        
+
         foreach (var part in _parts)
         {
             part.constraints = RigidbodyConstraints.FreezeAll;

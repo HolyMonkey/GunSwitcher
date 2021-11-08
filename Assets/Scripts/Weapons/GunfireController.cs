@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class GunfireController : MonoBehaviour
+public class GunfireController : BulletsCounter
     {
         // --- Audio ---
         public AudioClip GunShotClip;
@@ -33,8 +35,7 @@ public class GunfireController : MonoBehaviour
 
         // --- Timing ---
         [SerializeField] private float timeLastFired;
-
-
+        
         private void Start()
         {
             if(source != null) source.clip = GunShotClip;
@@ -75,20 +76,23 @@ public class GunfireController : MonoBehaviour
             // --- Keep track of when the weapon is being fired ---
             timeLastFired = Time.time;
 
-            // --- Spawn muzzle flash ---
-            var flash = Instantiate(muzzlePrefab, muzzlePosition.transform);
-
             // --- Shoot Projectile Object ---
             if (projectilePrefab != null)
             {
-                GameObject newProjectile = Instantiate(projectilePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation, transform);
+                if (BulletCount > 0)
+                {
+                    Instantiate(muzzlePrefab, muzzlePosition.transform);
+                    Instantiate(projectilePrefab, muzzlePosition.transform.position,
+                        muzzlePosition.transform.rotation, transform);
+                    BulletCount--;
+                    ChangeBulletCount();
+                }
             }
 
-            // --- Disable any gameobjects, if needed ---
             if (projectileToDisableOnFire != null)
             {
                 projectileToDisableOnFire.SetActive(false);
-                Invoke("ReEnableDisabledProjectile", 3);
+                    Invoke("ReEnableDisabledProjectile", 3);
             }
 
             // --- Handle Audio ---

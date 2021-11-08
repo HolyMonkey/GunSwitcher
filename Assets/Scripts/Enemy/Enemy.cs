@@ -15,9 +15,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject _laser;
     [SerializeField] private AutoShooting _autoShooting;
     [SerializeField] private Collider _weaponTrigger;
-
     [SerializeField] private bool _alive = true;
 
+    private ZoneEffect _zoneEffect;
+    
     public Transform HitTarget => _hitTarget;
 
     [ContextMenu("Die")]
@@ -38,6 +39,9 @@ public class Enemy : MonoBehaviour
 
     private void Dead()
     {
+        _zoneEffect = GetComponentInChildren<ZoneEffect>();
+        Destroy(_zoneEffect.gameObject);
+        
         _weaponTrigger.enabled = false;
         _aim.enabled = false;
         _alive = false;

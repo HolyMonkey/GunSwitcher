@@ -4,10 +4,11 @@ using Movement;
 using RootMotion.FinalIK;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Weapon
 {
-    public class Pistol : MonoBehaviour
+    public class Pistol : BulletsCounter
     {
         [SerializeField] private int _distance;
         [SerializeField] private float _shootDelay = 0.5f;
@@ -20,15 +21,24 @@ namespace Weapon
 
         [SerializeField] private AimController _aimController;
         [SerializeField] private TargetsFinder _finder;
+        [SerializeField] private char _infinitySymbol;
 
-        [SerializeField] private Enemy _currentTarget;
-        
+        private Enemy _currentTarget;
         private Coroutine _shooting;
-        
+
         private void OnEnable()
         {
             _finder.EnemyFinded += OnTargetFinded;
             _finder.NotEnoughTargets += OnNotEnoughTargets;
+
+            if (BulletCount > 50)
+            {
+                ChangeBulletCount(_infinitySymbol);
+            }
+            else
+            {
+                ChangeBulletCount();
+            }
         }
 
         private void OnDisable()
@@ -62,9 +72,22 @@ namespace Weapon
 
         private void Shoot(Vector3 direction)
         {
-            _muzzleFlare.Play(true);
-            Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.identity);
-            bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
+            if (BulletCount > 0)
+            {
+                _muzzleFlare.Play(true);
+                Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.identity);
+                bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
+                
+                if (BulletCount > 50)
+                {
+                    ChangeBulletCount(_infinitySymbol);
+                }
+                else
+                {
+                    BulletCount--;
+                    ChangeBulletCount();
+                }
+            }
         }
 
         private IEnumerator Shooting()
