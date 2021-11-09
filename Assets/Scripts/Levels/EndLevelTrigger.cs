@@ -15,12 +15,15 @@ namespace Levels
         [SerializeField] private Transform _fightPoint;
         [SerializeField] private CharacterAnimation _animator;
         [SerializeField] private SecondHandOnGun _secondHand;
+        [SerializeField] private Puncher _puncher;
+        [SerializeField] private GameObject _finishCanvas;
         
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out PhysicsMovement physicsMovement))
             {
                 physicsMovement.PickState(MovingState.Stop);
+                _finishCanvas.SetActive(true);
                 _playerCamera.enabled = false;
                 _finishCamera.enabled = true;
                 _gunSwicher.gameObject.SetActive(false);
@@ -28,6 +31,7 @@ namespace Levels
                 _player.rotation = _fightPoint.rotation;
                 _animator.PickState(AnimationStates.Fight, true);
                 _secondHand.enabled = false;
+                _puncher.StartFighting();
 
                 foreach (var weapon in _gunSwicher.Weapons)
                 {
