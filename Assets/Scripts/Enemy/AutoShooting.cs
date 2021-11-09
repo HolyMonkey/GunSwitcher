@@ -37,7 +37,6 @@ namespace _GAME.Common
         //     
         //     if (Physics.Raycast(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward), out hit, _distance, _targetLayerMask))
         //     {
-        //         Debug.Log("hui3");
         //         Debug.DrawRay(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
         //         Vector3 direction = (hit.point - _shootPosition.position).normalized;
         //         

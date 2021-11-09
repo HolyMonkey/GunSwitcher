@@ -96,7 +96,7 @@ namespace RootMotion.FinalIK {
 		/// <summary>
 		///Character root will be rotate around the Y axis to keep root forward within this angle from the aiming direction.
 		/// </summary>
-		[Range(0f, 180f)] public float maxRootAngle = 45f;
+		[Range(0f, 360f)] public float maxRootAngle = 45f;
 
         [Tooltip("If enabled, aligns the root forward to target direction after 'Max Root Angle' has been exceeded.")]
         /// <summary>
