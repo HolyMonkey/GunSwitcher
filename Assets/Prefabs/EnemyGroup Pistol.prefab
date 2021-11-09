@@ -73,15 +73,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 713979703946884400, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.40448946
+      value: -0.4044892
       objectReference: {fileID: 0}
     - target: {fileID: 713979703946884400, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00000020861629
+      value: 0.00000010430814
       objectReference: {fileID: 0}
     - target: {fileID: 713979703946884400, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.00000035762778
+      value: 0.00000029802317
       objectReference: {fileID: 0}
     - target: {fileID: 713979704068763842, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_LocalPosition.x
@@ -701,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979704068861094, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_Name
-      value: Enemy Soldier (2)
+      value: Enemy Soldier Turned Left 90 degrees
       objectReference: {fileID: 0}
     - target: {fileID: 713979704251917261, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -709,11 +709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979704251917261, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.026610434
+      value: -0.026610866
       objectReference: {fileID: 0}
     - target: {fileID: 713979704251917261, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.3739171
+      value: -0.37391645
       objectReference: {fileID: 0}
     - target: {fileID: 713979704337387805, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: _aim
@@ -721,27 +721,27 @@ PrefabInstance:
       objectReference: {fileID: 2126982467508287197}
     - target: {fileID: 713979704601928730, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0000003115274
+      value: 0.00000031944364
       objectReference: {fileID: 0}
     - target: {fileID: 713979704601928730, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00000043213373
+      value: 0.00000034272674
       objectReference: {fileID: 0}
     - target: {fileID: 713979704601928730, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.18964523
+      value: 0.18964592
       objectReference: {fileID: 0}
     - target: {fileID: 713979704668731306, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.00000029895455
+      value: -0.00000032456592
       objectReference: {fileID: 0}
     - target: {fileID: 713979704668731306, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.00000026822093
+      value: 0.00000004470349
       objectReference: {fileID: 0}
     - target: {fileID: 713979704668731306, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.18964599
+      value: -0.1896479
       objectReference: {fileID: 0}
     - target: {fileID: 713979704783049448, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -749,11 +749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979704783049448, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.049980536
+      value: 0.049980193
       objectReference: {fileID: 0}
     - target: {fileID: 713979704783049448, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.366043
+      value: 0.3660435
       objectReference: {fileID: 0}
     - target: {fileID: 713979704933478607, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -761,15 +761,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979704933478607, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00000085681665
+      value: -0.0000012144445
       objectReference: {fileID: 0}
     - target: {fileID: 713979704933478607, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0000001452863
+      value: -0.0000006053595
       objectReference: {fileID: 0}
     - target: {fileID: 713979705096855759, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.60942775
+      value: -0.6094279
       objectReference: {fileID: 0}
     - target: {fileID: 713979705096855759, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -777,7 +777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979705096855759, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.00000032782552
+      value: -0.0000008344649
       objectReference: {fileID: 0}
     - target: {fileID: 713979705227838186, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -785,35 +785,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979705227838186, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.07094632
+      value: 0.07094587
       objectReference: {fileID: 0}
     - target: {fileID: 713979705227838186, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.006646526
+      value: -0.0066460306
       objectReference: {fileID: 0}
     - target: {fileID: 713979705628121707, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.6094288
+      value: -0.6094287
       objectReference: {fileID: 0}
     - target: {fileID: 713979705628121707, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0000002444722
+      value: 0.000000174623
       objectReference: {fileID: 0}
     - target: {fileID: 713979705628121707, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0000008791685
+      value: 0.0000002682209
       objectReference: {fileID: 0}
     - target: {fileID: 713979705753341949, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.16115734
+      value: -0.16115737
       objectReference: {fileID: 0}
     - target: {fileID: 713979705753341949, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0063553276
+      value: -0.0063549383
       objectReference: {fileID: 0}
     - target: {fileID: 713979705753341949, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.002126068
+      value: 0.0021241459
       objectReference: {fileID: 0}
     - target: {fileID: 4025146013910351618, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: target
@@ -1562,7 +1562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979704068861094, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_Name
-      value: Enemy Soldier (1)
+      value: Enemy Soldier Turned Right 90 degrees
       objectReference: {fileID: 0}
     - target: {fileID: 713979704251917261, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -2492,7 +2492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713979704068861094, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_Name
-      value: Enemy Soldier (3)
+      value: Enemy Soldier Turned Right 90 degrees
       objectReference: {fileID: 0}
     - target: {fileID: 713979704251917261, guid: 04514074c7665ca4d9fcdfd82bf4f495, type: 3}
       propertyPath: m_ConnectedAnchor.x
