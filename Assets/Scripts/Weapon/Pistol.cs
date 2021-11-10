@@ -75,7 +75,7 @@ namespace Weapon
             if (BulletCount > 0)
             {
                 _muzzleFlare.Play(true);
-                Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.identity);
+                Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, transform.rotation);
                 bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
                 
                 if (BulletCount > 50)
