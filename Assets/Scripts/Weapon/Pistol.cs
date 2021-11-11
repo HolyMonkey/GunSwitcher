@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using Movement;
 using RootMotion.FinalIK;
@@ -20,6 +21,7 @@ namespace Weapon
         [SerializeField] private AimController _aimController;
         [SerializeField] private TargetsFinder _finder;
         [SerializeField] private char _infinitySymbol;
+        [SerializeField] private ParticleSystem _sleeve;
 
         private Enemy _currentTarget;
         private Coroutine _shooting;
@@ -75,6 +77,7 @@ namespace Weapon
         {
             if (BulletCount > 0)
             {
+                Instantiate(_sleeve, _shootPosition.transform.position, Quaternion.identity);
                 _muzzleFlare.Play(true);
                 Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, transform.rotation);
                 bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
