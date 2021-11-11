@@ -11,8 +11,9 @@ public class FightHealth : MonoBehaviour
     [SerializeField] private PlayerHealth _playerHealth;
     [SerializeField] private Animator _animator;
     [SerializeField] private int _health;
+    [SerializeField] private GameObject _victoryPanel;
 
-    public void TakeDamage(int damage)
+        public void TakeDamage(int damage)
     {
         _health -= damage;
         
@@ -24,12 +25,13 @@ public class FightHealth : MonoBehaviour
     {
         if (_health <= 0)
         {
-            if (_isPlayer == true)
+            if (_isPlayer)
             {
                 _playerHealth.TakeDamage(10000);
             }
             else
             {
+                _victoryPanel.SetActive(true);
                 _animator.SetBool("Die", true);
             }
         }
