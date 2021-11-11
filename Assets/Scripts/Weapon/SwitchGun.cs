@@ -15,13 +15,13 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private List<Weapon> _weapons;
     [SerializeField] private AimController _aim;
     [SerializeField] private LimbIK _secondHand;
-    [SerializeField] private TargetsFinder _finder;
     [SerializeField] private List<WeaponChangerItem> _guns;
 
     // [SerializeField] private SwipeDetection _swipeDetection;
     [SerializeField] private int _currentWeaponIndex;
     [SerializeField] private List<GameObject> _gunsTemplates;
     [SerializeField] private Transform _gunCreation;
+    
     private WeaponChangerItem _gunTransform;
 
     public List<Weapon> Weapons => _weapons;
@@ -98,9 +98,8 @@ public class SwitchGun : MonoBehaviour
         {
             weapon.WeaponModel.SetActive(false);
         }
+        
         _weapons[_currentWeaponIndex].WeaponModel.SetActive(true);
-
-        _finder.UpdateTrigger();
 
         _aim.targetSwitchSmoothTime = _weapons[_currentWeaponIndex]._smoothTime;
         _secondHand.solver.target = _weapons[_currentWeaponIndex].HandPointWeapon.transform;

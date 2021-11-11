@@ -15,11 +15,6 @@ public abstract class BulletsCounter : MonoBehaviour
         _bulletCounterUI = FindObjectOfType<BulletCounterUI>();
     }
 
-    private void OnEnable()
-    {
-        ChangeBulletCount();
-    }
-
     protected void ChangeBulletCount()
     {
         _bulletCounterUI.SetBulletsCounter(BulletCount);

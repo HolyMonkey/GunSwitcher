@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Linq;
 using Movement;
 using RootMotion.FinalIK;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Weapon
 {
@@ -28,6 +26,8 @@ namespace Weapon
 
         private void OnEnable()
         {
+            PickTarget();
+
             _finder.EnemyFinded += OnTargetFinded;
             _finder.NotEnoughTargets += OnNotEnoughTargets;
 
@@ -45,12 +45,13 @@ namespace Weapon
         {
             _finder.EnemyFinded -= OnTargetFinded;
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
+            _shooting = null;
         }
 
         private void OnTargetFinded(Enemy enemy)
         {
             enemy.Die += () => OnEnemyDie(enemy);
-            
+
             if (_currentTarget == null)
             {
                 PickTarget();
@@ -64,9 +65,9 @@ namespace Weapon
                 {
                     Debug.DrawRay(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     
-                        Vector3 direction = (hit.point - _shootPosition.position).normalized;
+                    Vector3 direction = (hit.point - _shootPosition.position).normalized;
                         
-                        Shoot(direction);
+                    Shoot(direction);
                 }
         }
 
@@ -108,15 +109,11 @@ namespace Weapon
             }
 
             PickTarget();
-            
-            // if (enemy == _currentTarget)
-            // {
-            //     PickTarget();
-            // }
         }
 
         private void OnNotEnoughTargets()
         {
+            _currentTarget = null;
             _aimController.target = null;
             _aimController.weight = 0;
         }
@@ -125,7 +122,7 @@ namespace Weapon
         {
             if (_finder.Targets.Count > 0)
             {
-                _currentTarget = _finder.Targets[0];
+                _currentTarget = _finder.Targets.FirstOrDefault(t => t.enabled = true);
                 _aimController.target = _currentTarget.HitTarget;
                 _aimController.weight = 1;
             }

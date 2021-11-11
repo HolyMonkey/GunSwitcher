@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Puncher : MonoBehaviour
@@ -12,6 +13,12 @@ public class Puncher : MonoBehaviour
 
     public void StartFighting()
     {
+        StartCoroutine(WaitForStartFighting());
+    }
+
+    private IEnumerator WaitForStartFighting()
+    {
+        yield return new WaitForSeconds(1.7f);
         _animator.SetBool(Attack, true);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -35,11 +36,18 @@ public class GunfireController : BulletsCounter
 
         // --- Timing ---
         [SerializeField] private float timeLastFired;
-        
+        [SerializeField] private GameObject _bulletCollector;
+
+        private void OnEnable()
+        {
+            timeLastFired = Time.time;
+            shotDelay = 1f;
+            ChangeBulletCount();
+        }
+
         private void Start()
         {
             if(source != null) source.clip = GunShotClip;
-            timeLastFired = 0;
             lastScopeState = scopeActive;
         }
 
@@ -56,6 +64,7 @@ public class GunfireController : BulletsCounter
             if (autoFire && ((timeLastFired + shotDelay) <= Time.time))
             {
                 FireWeapon();
+                shotDelay = 2.5f;
             }
 
             // --- Toggle scope based on public variable value ---
@@ -81,10 +90,10 @@ public class GunfireController : BulletsCounter
             {
                 if (BulletCount > 0)
                 {
-                    GameObject muzzle = Instantiate(muzzlePrefab, muzzlePosition.transform);
+                    GameObject muzzle = Instantiate(muzzlePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation);
                     Destroy(muzzle, 0.5f);
                     Instantiate(projectilePrefab, muzzlePosition.transform.position,
-                        muzzlePosition.transform.rotation, transform);
+                        muzzlePosition.transform.rotation, _bulletCollector.transform);
                     BulletCount--;
                     ChangeBulletCount();
                 }
