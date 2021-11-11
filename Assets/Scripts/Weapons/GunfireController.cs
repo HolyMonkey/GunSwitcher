@@ -90,10 +90,10 @@ public class GunfireController : BulletsCounter
             {
                 if (BulletCount > 0)
                 {
-                    GameObject muzzle = Instantiate(muzzlePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation);
+                    GameObject muzzle = Instantiate(muzzlePrefab, muzzlePosition.transform);
                     Destroy(muzzle, 0.5f);
                     Instantiate(projectilePrefab, muzzlePosition.transform.position,
-                        muzzlePosition.transform.rotation, _bulletCollector.transform);
+                        muzzlePosition.transform.rotation, transform);
                     BulletCount--;
                     ChangeBulletCount();
                 }
