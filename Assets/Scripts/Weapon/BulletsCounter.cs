@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public abstract class BulletsCounter : MonoBehaviour
 {
-    private BulletCounterUI _bulletCounterUI;
+    [SerializeField] private BulletCounterUI _bulletCounterUI;
     
     [SerializeField] protected int BulletCount;
     

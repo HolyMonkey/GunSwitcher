@@ -16,8 +16,6 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private AimController _aim;
     [SerializeField] private LimbIK _secondHand;
     [SerializeField] private List<WeaponChangerItem> _guns;
-
-    // [SerializeField] private SwipeDetection _swipeDetection;
     [SerializeField] private int _currentWeaponIndex;
     [SerializeField] private List<GameObject> _gunsTemplates;
     [SerializeField] private Transform _gunCreation;

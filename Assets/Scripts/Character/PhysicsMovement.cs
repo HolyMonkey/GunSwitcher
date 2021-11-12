@@ -10,7 +10,6 @@ namespace Movement
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private MovingState _currentState;
         [SerializeField] private StartGame _startGameUi;
-        
         [SerializeField] private float _speed;
         [SerializeField] private float _normalSpeed = 3f;
         [SerializeField] private float _woundedSpeed = 1.5f;
@@ -36,8 +35,8 @@ namespace Movement
         
         private void OnGameStart()
         {
-            _gunSwitcher.SetActive(true);
             _bulletCounter.SetActive(true);
+            _gunSwitcher.SetActive(true);
             PickState(MovingState.MoveNormal);
         }
 

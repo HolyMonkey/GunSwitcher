@@ -15,7 +15,6 @@ public class CharacterAnimation : MonoBehaviour
 {
     [SerializeField] private PhysicsMovement _movement;
     [SerializeField] private Animator _animator;
-    [SerializeField] private LevelProgress _levelProgress;
     [SerializeField] private PlayerHealth _health;
     
     private void OnEnable()
