@@ -77,7 +77,8 @@ namespace Weapon
         {
             if (BulletCount > 0)
             {
-                Instantiate(_sleeve, _shootPosition.transform.position, Quaternion.identity);
+                _sleeve.transform.position = _shootPosition.transform.position;
+                _sleeve.Play(true);
                 _muzzleFlare.Play(true);
                 Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, transform.rotation);
                 bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
