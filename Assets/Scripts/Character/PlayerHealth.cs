@@ -32,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (_isAlive == false)
         {
-            Debug.Log("vlk panel");
             _endGamePanel.gameObject.SetActive(true);
             _physicsMovement.PickState(MovingState.Stop);
             Die?.Invoke();
