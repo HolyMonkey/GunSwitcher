@@ -21,11 +21,16 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private Transform _gunCreation;
     
     private WeaponChangerItem _gunTransform;
+    private int _assaultBulCount;
+    private int _rocketBulletsCount;
 
     public List<Weapon> Weapons => _weapons;
 
-    private void Start()
+    private void Awake()
     {
+        _assaultBulCount = 20;
+        _rocketBulletsCount = 3;
+        
         _guns.AddRange(_leftGuns);
         _guns.AddRange(_rightGuns);
         
@@ -121,6 +126,7 @@ public class SwitchGun : MonoBehaviour
         leftGun.gameObject.SetActive(true);
         rightGun.gameObject.SetActive(true);
     }
+    
 
     private void SetTransform(List<WeaponChangerItem> guns)
     {
@@ -141,6 +147,28 @@ public class SwitchGun : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void AddBulletCount(GameObject gun, int count)
+    {
+        if (gun.TryGetComponent(out AssaultChecker automate))
+        {
+            _assaultBulCount = count;
+        }
+        else if (gun.TryGetComponent(out RocketChecker rocket))
+        {
+            _rocketBulletsCount = count;
+        }
+    }
+
+    public int GetAssaultBulletCount()
+    {
+        return _assaultBulCount;
+    }
+
+    public int GetRocketBulletCount()
+    {
+        return _rocketBulletsCount;
     }
 
     [Serializable]

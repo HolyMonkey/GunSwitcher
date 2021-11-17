@@ -48,6 +48,11 @@ namespace Weapon
             _finder.EnemyFinded -= OnTargetFinded;
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
             _shooting = null;
+            
+            if (Swith != null)
+            {
+                Swith.AddBulletCount(gameObject, BulletCount);
+            }
         }
 
         private void OnTargetFinded(Enemy enemy)
