@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AutoShooting _autoShooting;
     [SerializeField] private Collider _weaponTrigger;
     [SerializeField] private bool _alive = true;
-
+    
+    private EnemiesTrigger _enemiesTrigger;
     private ZoneEffect _zoneEffect;
     
     public Transform HitTarget => _hitTarget;
@@ -27,13 +28,21 @@ public class Enemy : MonoBehaviour
         Die?.Invoke();
     }
 
+    private void Awake()
+    {
+        _enemiesTrigger = GetComponentInParent<EnemiesTrigger>();
+    }
+
     private void OnEnable()
     {
+        _laser.SetActive(false);
+        _enemiesTrigger.TargetFinded += OnPlayerFinded;
         Die += Dead;
     }
 
     private void OnDisable()
     {
+        _enemiesTrigger.TargetFinded += OnPlayerFinded;
         Die -= Dead;
     }
 
@@ -48,5 +57,13 @@ public class Enemy : MonoBehaviour
         _laser.SetActive(false);
         _autoShooting.enabled = false;
         _ragdoll.ActivateRagdoll();
+    }
+
+    private void OnPlayerFinded()
+    {
+        if (_alive)
+        {
+            _laser.SetActive(true);
+        }
     }
 }

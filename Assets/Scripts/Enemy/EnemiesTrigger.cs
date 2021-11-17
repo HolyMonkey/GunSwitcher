@@ -1,12 +1,13 @@
 ﻿using System;
 using RootMotion.FinalIK;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _GAME.Common
 {
     public class EnemiesTrigger : MonoBehaviour
     {
-        public Action TargetFinded;
+        public event UnityAction TargetFinded;
         
         [SerializeField] private AimController[] _aims;
 

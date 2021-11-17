@@ -163,7 +163,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Run
-  m_Speed: 1
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8462286806579058203}
@@ -887,7 +887,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Wounded Run
-  m_Speed: 1
+  m_Speed: 1.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6908348163794944861}
