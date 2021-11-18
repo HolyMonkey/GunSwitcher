@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 namespace Lightbug.LaserMachine
 {
+    
+public class LaserMachine : MonoBehaviour
+{
 
-
-
-public class LaserMachine : MonoBehaviour {
-
-    struct LaserElement 
+    struct LaserElement
     {
         public Transform transform;        
         public LineRenderer lineRenderer;
@@ -36,6 +35,7 @@ public class LaserMachine : MonoBehaviour {
     bool m_active = true;
     bool m_assignLaserMaterial;
     bool m_assignSparks;
+    public Color EndColor;
   		
     
 
@@ -79,6 +79,9 @@ public class LaserMachine : MonoBehaviour {
             newObj.GetComponent<LineRenderer>().useWorldSpace = true;
             newObj.GetComponent<LineRenderer>().SetPosition(0, newObj.transform.position);
             newObj.GetComponent<LineRenderer>().SetPosition(1, newObj.transform.position + transform.forward * m_currentProperties.m_maxRadialDistance);
+            newObj.GetComponent<LineRenderer>().endWidth = 0f;
+            newObj.GetComponent<LineRenderer>().startColor = Color.red;
+            newObj.GetComponent<LineRenderer>().endColor =  EndColor;;
             newObj.transform.SetParent(transform);
             
             if( m_assignSparks )
@@ -97,8 +100,7 @@ public class LaserMachine : MonoBehaviour {
         }
         
 	}
-        
-       
+    
 	void Update () {
 
         if (m_currentProperties.m_intermittent)
@@ -207,11 +209,6 @@ public class LaserMachine : MonoBehaviour {
                 }              
 
                 
-
-
-
-
-
             }
             else
             {
@@ -231,9 +228,5 @@ public class LaserMachine : MonoBehaviour {
 
     }
     */
-
-	
 }
-
-
 }
