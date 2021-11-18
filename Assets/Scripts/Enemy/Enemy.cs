@@ -36,13 +36,11 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         _laser.SetActive(false);
-        _enemiesTrigger.TargetFinded += OnPlayerFinded;
         Die += Dead;
     }
 
     private void OnDisable()
     {
-        _enemiesTrigger.TargetFinded += OnPlayerFinded;
         Die -= Dead;
     }
 
@@ -59,7 +57,7 @@ public class Enemy : MonoBehaviour
         _ragdoll.ActivateRagdoll();
     }
 
-    private void OnPlayerFinded()
+    public void TurnOnLaser()
     {
         if (_alive)
         {
