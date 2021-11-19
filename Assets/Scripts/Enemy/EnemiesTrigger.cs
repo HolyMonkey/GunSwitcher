@@ -7,8 +7,6 @@ namespace _GAME.Common
 {
     public class EnemiesTrigger : MonoBehaviour
     {
-        public event UnityAction TargetFinded;
-        
         [SerializeField] private AimController[] _aims;
 
         private void OnTriggerEnter(Collider other)
@@ -19,8 +17,6 @@ namespace _GAME.Common
                 {
                     aim.target = playerHealth.transform;
                 }
-                
-                TargetFinded?.Invoke();
             }
         }
 

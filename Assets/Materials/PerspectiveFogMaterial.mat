@@ -35,5 +35,5 @@ Material:
     - BOOLEAN_6C4164AC: 0
     - Vector1_BF525535: 3.37
     m_Colors:
-    - Color_58E0201D: {r: 0, g: 0.65882355, b: 1, a: 0.65882355}
+    - Color_58E0201D: {r: 0, g: 0.65882355, b: 1, a: 0.22745098}
   m_BuildTextureStacks: []
