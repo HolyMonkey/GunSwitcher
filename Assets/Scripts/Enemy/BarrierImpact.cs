@@ -18,8 +18,8 @@ public class BarrierImpact : MonoBehaviour
             part.constraints = RigidbodyConstraints.None;
         }
 
-        _zoneEffect = GetComponentInChildren<ZoneEffect>();
-        Destroy(_zoneEffect.gameObject);
+        // _zoneEffect = GetComponentInChildren<ZoneEffect>();
+        // Destroy(_zoneEffect.gameObject);
     }
 
     [ContextMenu("Deactivate")]

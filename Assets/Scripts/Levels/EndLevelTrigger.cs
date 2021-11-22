@@ -28,7 +28,7 @@ namespace Levels
                 _finishCamera.enabled = true;
                 _gunSwicher.gameObject.SetActive(false);
                 _player.position = _fightPoint.position;
-                _player.rotation = _fightPoint.rotation;
+                //_player.rotation = _fightPoint.rotation;
                 _animator.PickState(AnimationStates.Fight, true);
                 _secondHand.enabled = false;
                 _puncher.StartFighting();

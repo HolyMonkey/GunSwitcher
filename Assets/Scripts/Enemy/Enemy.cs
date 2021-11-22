@@ -46,8 +46,8 @@ public class Enemy : MonoBehaviour
 
     private void Dead()
     {
-        _zoneEffect = GetComponentInChildren<ZoneEffect>();
-        Destroy(_zoneEffect.gameObject);
+        // _zoneEffect = GetComponentInChildren<ZoneEffect>();
+        // Destroy(_zoneEffect.gameObject);
         
         _weaponTrigger.enabled = false;
         _aim.enabled = false;

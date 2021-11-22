@@ -27,6 +27,11 @@ namespace Weapon
 
             if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))
             {
+                if (_hitEffect != null)
+                { 
+                    Instantiate(_hitEffect, transform.position, Quaternion.identity);
+                }
+                
                 playerHealth.TakeDamage(50);
             }
             

@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class LaserTrigger : MonoBehaviour
 {
-    private Enemy _current;
+    private Enemy[] _enemies;
 
     private void Start()
     {
-        _current = GetComponentInParent<Enemy>();
+        _enemies = GetComponentsInChildren<Enemy>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out PlayerHealth player))
         {
-            _current.TurnOnLaser();
+            foreach (var enemy in _enemies)
+            {
+                enemy.TurnOnLaser();
+            }
         }
     }
 }
