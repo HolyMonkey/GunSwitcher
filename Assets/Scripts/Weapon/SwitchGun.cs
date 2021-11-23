@@ -19,8 +19,10 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private int _currentWeaponIndex;
     [SerializeField] private List<GameObject> _gunsTemplates;
     [SerializeField] private Transform _gunCreation;
+    [SerializeField] private Transform _leftGunTransform;
+    [SerializeField] private Transform _rightGunTransform;
     
-    private WeaponChangerItem _gunTransform;
+    private Transform _gunTransform;
     private int _assaultBulCount;
     private int _rocketBulletsCount;
 
@@ -63,17 +65,17 @@ public class SwitchGun : MonoBehaviour
         }
     }
 
-    private void ChangeWeapon(bool isNext)
+    public void ChangeWeapon(bool isNext)
     {
         if (isNext)
         {
-            SetTransform(_leftGuns);
+            SetTransform(_leftGunTransform);
             
             _currentWeaponIndex--;
         }
         else
         {
-            SetTransform(_rightGuns);
+            SetTransform(_rightGunTransform);
             
             _currentWeaponIndex++;
         }
@@ -88,7 +90,7 @@ public class SwitchGun : MonoBehaviour
         }
         
         GameObject animationGun = GetGunTemplate();
-        Instantiate(animationGun, _gunTransform.gameObject.transform.position, animationGun.transform.rotation, _gunCreation);
+        Instantiate(animationGun, _gunTransform.transform.position, animationGun.transform.rotation, _gunCreation);
 
         PickCurrentWeapon();
 
@@ -126,14 +128,10 @@ public class SwitchGun : MonoBehaviour
         leftGun.gameObject.SetActive(true);
         rightGun.gameObject.SetActive(true);
     }
-    
 
-    private void SetTransform(List<WeaponChangerItem> guns)
+    private void SetTransform(Transform gunTransform)
     {
-        foreach (var gun in guns)
-        {
-            _gunTransform = guns.FirstOrDefault(gun => gun.gameObject.activeSelf == true);
-        }
+        _gunTransform = gunTransform;
     }
 
     private GameObject GetGunTemplate()
