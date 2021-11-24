@@ -96,6 +96,11 @@ public class GunfireController : BulletsCounter
                         muzzlePosition.transform.rotation, transform);
                     BulletCount--;
                     ChangeBulletCount();
+                    
+                    if (Swith != null)
+                    {
+                        Swith.AddBulletCount(gameObject, BulletCount);
+                    }
                 }
             }
 

@@ -48,11 +48,6 @@ namespace Weapon
             _finder.EnemyFinded -= OnTargetFinded;
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
             _shooting = null;
-            
-            if (Swith != null)
-            {
-                Swith.AddBulletCount(gameObject, BulletCount);
-            }
         }
 
         private void OnTargetFinded(Enemy enemy)
@@ -87,7 +82,7 @@ namespace Weapon
                 _muzzleFlare.Play(true);
                 Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, transform.rotation);
                 bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
-                
+
                 if (BulletCount > 50)
                 {
                     ChangeBulletCount(_infinitySymbol);
@@ -96,6 +91,11 @@ namespace Weapon
                 {
                     BulletCount--;
                     ChangeBulletCount();
+                    
+                    if (Swith != null)
+                    {
+                        Swith.AddBulletCount(gameObject, BulletCount);
+                    }
                 }
             }
         }

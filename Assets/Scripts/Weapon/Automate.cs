@@ -12,13 +12,20 @@ public class Automate : MonoBehaviour
     
     private void OnEnable()
     {
-        _bulletCount = _switchGun.GetAssaultBulletCount();
+        _switchGun.OnAssaultBulletChanged += OnBulletCountChanged;
         DrawShells();
     }
 
     private void OnDisable()
     {
+        _switchGun.OnAssaultBulletChanged -= OnBulletCountChanged;
         DeactivateShells();
+    }
+    
+    private void OnBulletCountChanged(int count)
+    {
+        _bulletCount = count;
+        DrawShells();
     }
 
     private void DrawShells()
@@ -28,9 +35,16 @@ public class Automate : MonoBehaviour
             return;
         }
         
-        for (int i = 0; i < _bulletCount; i++)
+        for (int i = 0; i < _shells.Count; i++)
         {
-            _shells[i].gameObject.SetActive(true);
+            if (_bulletCount > i)
+            {
+                _shells[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                _shells[i].gameObject.SetActive(false);
+            }
         }
     }
 

@@ -5,13 +5,13 @@ using Movement;
 using RootMotion.FinalIK;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using Weapon;
 
 
 public class SwitchGun : MonoBehaviour
 {
-    [SerializeField] private List<WeaponChangerItem> _leftGuns;
-    [SerializeField] private List<WeaponChangerItem> _rightGuns;
     [SerializeField] private List<Weapon> _weapons;
     [SerializeField] private AimController _aim;
     [SerializeField] private LimbIK _secondHand;
@@ -19,66 +19,58 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private int _currentWeaponIndex;
     [SerializeField] private List<GameObject> _gunsTemplates;
     [SerializeField] private Transform _gunCreation;
+
+    [SerializeField] private List<WeaponChangerItem> _buttonGuns;
+
     [SerializeField] private Transform _leftGunTransform;
     [SerializeField] private Transform _rightGunTransform;
-    
+    [SerializeField] private Transform _topGunTransform;
+
     private Transform _gunTransform;
     private int _assaultBulCount;
     private int _rocketBulletsCount;
 
     public List<Weapon> Weapons => _weapons;
 
-    private void Awake()
+    public event UnityAction<int> OnRocketBulletChanged;
+    public event UnityAction<int> OnAssaultBulletChanged;
+
+    private void Start()
     {
         _assaultBulCount = 20;
         _rocketBulletsCount = 3;
-        
-        _guns.AddRange(_leftGuns);
-        _guns.AddRange(_rightGuns);
-        
+        OnAssaultBulletChanged?.Invoke(_assaultBulCount);
+        OnRocketBulletChanged?.Invoke(_rocketBulletsCount);
+
         PickCurrentWeapon();
-        DrawIcons();
-    }
 
-    private void OnEnable()
-    {
-        SwipeDetection.SwipeEvent += OnSwipe;
-    }
-
-    private void OnDisable()
-    {
-        SwipeDetection.SwipeEvent -= OnSwipe;
-    }
-
-    private void OnSwipe(Vector2 direction)
-    {
-        // vector2.up 
-        //  ?????????
-        
-        if(direction == Vector2.left)
+        foreach (var buttonGun in _buttonGuns)
         {
-            ChangeWeapon(false);
-        }
-        else if (direction == Vector2.right)
-        {
-            ChangeWeapon(true);
+            buttonGun.GetComponent<Button>().enabled = false;
         }
     }
 
-    public void ChangeWeapon(bool isNext)
+    public void ChangeWeapon(WeaponChangerItem weapon)
     {
-        if (isNext)
+        if (weapon.TryGetComponent(out Pistole pistole))
+        {
+            SetTransform(_topGunTransform);
+            
+            _currentWeaponIndex = 0;
+        }
+        else if (weapon.TryGetComponent(out Automate automate))
         {
             SetTransform(_leftGunTransform);
             
-            _currentWeaponIndex--;
+            _currentWeaponIndex = 1;
         }
-        else
+        else if (weapon.TryGetComponent(out Rocket rocket))
         {
             SetTransform(_rightGunTransform);
             
-            _currentWeaponIndex++;
+            _currentWeaponIndex = 2;
         }
+
 
         if (_currentWeaponIndex > _weapons.Count - 1)
         {
@@ -114,19 +106,23 @@ public class SwitchGun : MonoBehaviour
     
     private void DrawIcons()
     {
-        int left = _currentWeaponIndex == 0 ? _weapons.Count - 1 : _currentWeaponIndex - 1;
-        int right = _currentWeaponIndex == _weapons.Count -1 ? 0 : _currentWeaponIndex + 1;
-        
-        foreach (var gun in _guns)
+        for (int i = 0; i < _buttonGuns.Count; i++)
         {
-            gun.gameObject.SetActive(false);
+            if (i == _currentWeaponIndex)
+            {
+                _buttonGuns[i].GetComponent<Button>().enabled = false;
+                var color = _buttonGuns[i].GetComponentInChildren<Image>().color;
+                color.a = 0.5f;
+                _buttonGuns[i].GetComponentInChildren<Image>().color = color;
+            }
+            else
+            {
+                _buttonGuns[i].GetComponent<Button>().enabled = true;
+                var color1 = _buttonGuns[i].GetComponentInChildren<Image>().color;
+                color1.a = 1f;
+                _buttonGuns[i].GetComponentInChildren<Image>().color = color1;
+            }
         }
-
-        WeaponChangerItem leftGun = _leftGuns.First(i => i.Id == _weapons[left].Id);
-        WeaponChangerItem rightGun = _rightGuns.First(i => i.Id == _weapons[right].Id);
-
-        leftGun.gameObject.SetActive(true);
-        rightGun.gameObject.SetActive(true);
     }
 
     private void SetTransform(Transform gunTransform)
@@ -152,21 +148,13 @@ public class SwitchGun : MonoBehaviour
         if (gun.TryGetComponent(out AssaultChecker automate))
         {
             _assaultBulCount = count;
+            OnAssaultBulletChanged?.Invoke(_assaultBulCount);
         }
         else if (gun.TryGetComponent(out RocketChecker rocket))
         {
             _rocketBulletsCount = count;
+            OnRocketBulletChanged?.Invoke(_rocketBulletsCount);
         }
-    }
-
-    public int GetAssaultBulletCount()
-    {
-        return _assaultBulCount;
-    }
-
-    public int GetRocketBulletCount()
-    {
-        return _rocketBulletsCount;
     }
 
     [Serializable]

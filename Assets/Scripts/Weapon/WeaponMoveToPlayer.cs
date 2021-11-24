@@ -6,12 +6,12 @@ using UnityEngine;
 public class WeaponMoveToPlayer : MonoBehaviour
 {
     [SerializeField] private PlayerHand _righthand;
-    private float _speed = 5f;
+    private float _speed = 6f;
     
     private void Awake()
     {
         _righthand = FindObjectOfType<PlayerHand>();
-        Destroy(gameObject, 0.35f);
+        Destroy(gameObject, 0.4f);
     }
 
     private void Update()
