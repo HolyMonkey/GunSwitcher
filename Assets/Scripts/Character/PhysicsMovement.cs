@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Movement
@@ -15,7 +16,16 @@ namespace Movement
         [SerializeField] private float _woundedSpeed = 1.5f;
         [SerializeField] private GameObject _gunSwitcher;
         [SerializeField] private GameObject _bulletCounter;
+
+        private Vector3 _direction;
+        
         public bool IsMoving { get; private set; } = false;
+
+
+        private void Start()
+        {
+            _direction = -Vector3.forward;
+        }
 
         private void OnEnable()
         {
@@ -29,7 +39,7 @@ namespace Movement
 
         private void Update()
         {
-            Move(-Vector3.forward);
+            Move(_direction);
             IsMoving = true;
         }
         
@@ -64,6 +74,12 @@ namespace Movement
                     _speed = _normalSpeed;
                     break;
             }
+        }
+
+        public void ChangeDirection(Vector3 direction, Quaternion rotation)
+        {
+            _direction = direction;
+            transform.rotation = rotation;
         }
     }
 }

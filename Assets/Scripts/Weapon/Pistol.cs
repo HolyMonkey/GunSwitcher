@@ -11,7 +11,6 @@ namespace Weapon
     {
         [SerializeField] private int _distance;
         [SerializeField] private float _shootDelay = 0.5f;
-        [SerializeField] private bool _shootReady = true;
         [SerializeField] private LayerMask _targetLayerMask;
         
         [SerializeField] private ParticleSystem _muzzleFlare;
@@ -45,8 +44,10 @@ namespace Weapon
 
         private void OnDisable()
         {
+            _shooting = null;
             _finder.EnemyFinded -= OnTargetFinded;
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
+            
             _shooting = null;
         }
 

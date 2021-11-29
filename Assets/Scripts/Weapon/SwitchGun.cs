@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Movement;
 using RootMotion.FinalIK;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -15,8 +12,6 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private List<Weapon> _weapons;
     [SerializeField] private AimController _aim;
     [SerializeField] private LimbIK _secondHand;
-    [SerializeField] private List<WeaponChangerItem> _guns;
-    [SerializeField] private int _currentWeaponIndex;
     [SerializeField] private List<GameObject> _gunsTemplates;
     [SerializeField] private Transform _gunCreation;
 
@@ -29,6 +24,8 @@ public class SwitchGun : MonoBehaviour
     private Transform _gunTransform;
     private int _assaultBulCount;
     private int _rocketBulletsCount;
+    
+    private int _currentWeaponIndex;
 
     public List<Weapon> Weapons => _weapons;
 
@@ -58,13 +55,13 @@ public class SwitchGun : MonoBehaviour
             
             _currentWeaponIndex = 0;
         }
-        else if (weapon.TryGetComponent(out Automate automate))
+        else if (weapon.TryGetComponent(out AutomateShells automate))
         {
             SetTransform(_leftGunTransform);
             
             _currentWeaponIndex = 1;
         }
-        else if (weapon.TryGetComponent(out Rocket rocket))
+        else if (weapon.TryGetComponent(out RocketShells rocket))
         {
             SetTransform(_rightGunTransform);
             
@@ -110,19 +107,21 @@ public class SwitchGun : MonoBehaviour
         {
             if (i == _currentWeaponIndex)
             {
-                _buttonGuns[i].GetComponent<Button>().enabled = false;
-                var color = _buttonGuns[i].GetComponentInChildren<Image>().color;
-                color.a = 0.5f;
-                _buttonGuns[i].GetComponentInChildren<Image>().color = color;
+                DrawButtons(_buttonGuns[i],false, 0.5f);
             }
             else
             {
-                _buttonGuns[i].GetComponent<Button>().enabled = true;
-                var color1 = _buttonGuns[i].GetComponentInChildren<Image>().color;
-                color1.a = 1f;
-                _buttonGuns[i].GetComponentInChildren<Image>().color = color1;
+                DrawButtons(_buttonGuns[i],true);
             }
         }
+    }
+
+    private void DrawButtons(WeaponChangerItem buttonGun,bool enabledButton,  float alpha = 1f)
+    {
+        buttonGun.GetComponent<Button>().enabled = enabledButton;
+        var color1 = buttonGun.GetComponentInChildren<Image>().color;
+        color1.a = alpha;
+        buttonGun.GetComponentInChildren<Image>().color = color1;
     }
 
     private void SetTransform(Transform gunTransform)
@@ -160,11 +159,9 @@ public class SwitchGun : MonoBehaviour
     [Serializable]
     public class Weapon
     {
-        public string Name;
         public Weapons Id;
         public GameObject WeaponModel;
         public GameObject HandPointWeapon;
         public float _smoothTime;
-        public Sprite Icon;
     }
 }
