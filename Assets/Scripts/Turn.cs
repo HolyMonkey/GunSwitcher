@@ -18,12 +18,12 @@ public class Turn : MonoBehaviour
     if (_isTurnedLeft)
     {
       _direction = Vector3.right;
-      _rotation = Quaternion.Euler(0, 90, 0);
+      _rotation = Quaternion.Euler(0, -90, 0);
     }
     else
     {
       _direction = Vector3.left;
-      _rotation = Quaternion.Euler(0, -90, 0);
+      _rotation = Quaternion.Euler(0, 90, 0);
     }
   }
 }
