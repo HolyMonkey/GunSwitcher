@@ -24,6 +24,7 @@ public class SwitchGun : MonoBehaviour
     private Transform _gunTransform;
     private int _assaultBulCount;
     private int _rocketBulletsCount;
+    private Quaternion _rotation;
     
     private int _currentWeaponIndex;
 
@@ -34,6 +35,7 @@ public class SwitchGun : MonoBehaviour
 
     private void Start()
     {
+       // _rotation =  Quaternion.Euler(0, -90, 0);
         _assaultBulCount = 20;
         _rocketBulletsCount = 3;
         OnAssaultBulletChanged?.Invoke(_assaultBulCount);
@@ -79,7 +81,7 @@ public class SwitchGun : MonoBehaviour
         }
         
         GameObject animationGun = GetGunTemplate();
-        Instantiate(animationGun, _gunTransform.transform.position, animationGun.transform.rotation, _gunCreation);
+        Instantiate(animationGun, _gunTransform.transform.position, animationGun.transform.rotation * transform.rotation, _gunCreation);
 
         PickCurrentWeapon();
 

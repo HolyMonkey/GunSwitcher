@@ -19,7 +19,6 @@ namespace Weapon
 
         [SerializeField] private AimController _aimController;
         [SerializeField] private TargetsFinder _finder;
-        [SerializeField] private char _infinitySymbol;
         [SerializeField] private ParticleSystem _sleeve;
 
         private Enemy _currentTarget;
@@ -31,15 +30,6 @@ namespace Weapon
 
             _finder.EnemyFinded += OnTargetFinded;
             _finder.NotEnoughTargets += OnNotEnoughTargets;
-
-            if (BulletCount > 50)
-            {
-                ChangeBulletCount(_infinitySymbol);
-            }
-            else
-            {
-                ChangeBulletCount();
-            }
         }
 
         private void OnDisable()
@@ -86,13 +76,11 @@ namespace Weapon
 
                 if (BulletCount > 50)
                 {
-                    ChangeBulletCount(_infinitySymbol);
                 }
                 else
                 {
                     BulletCount--;
-                    ChangeBulletCount();
-                    
+
                     if (Swith != null)
                     {
                         Swith.AddBulletCount(gameObject, BulletCount);

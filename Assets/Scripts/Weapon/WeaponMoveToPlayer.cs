@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class WeaponMoveToPlayer : MonoBehaviour
 {
-    [SerializeField] private PlayerHand _righthand;
+    private PlayerHand _righthand;
     private float _speed = 6f;
-    
+
     private void Awake()
     {
         _righthand = FindObjectOfType<PlayerHand>();

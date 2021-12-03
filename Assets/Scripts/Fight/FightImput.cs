@@ -15,4 +15,9 @@ public class FightImput : MonoBehaviour
     {
         _animator.SetTrigger("Punch");
     }
+
+    public void SetActiveScreen(bool isActive)
+    {
+        _catcher.gameObject.SetActive(isActive);
+    }
 }

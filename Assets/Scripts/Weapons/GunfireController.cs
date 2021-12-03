@@ -1,6 +1,4 @@
-﻿using System;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class GunfireController : BulletsCounter
@@ -26,6 +24,7 @@ public class GunfireController : BulletsCounter
         public GameObject scope;
         public bool scopeActive = true;
         private bool lastScopeState;
+        private bool _prepareToshoot = true;
 
         // --- Projectile ---
         [Tooltip("The projectile gameobject to instantiate each time the weapon is fired.")]
@@ -42,7 +41,6 @@ public class GunfireController : BulletsCounter
         {
             timeLastFired = Time.time;
             shotDelay = 1f;
-            ChangeBulletCount();
         }
 
         private void Start()
@@ -88,15 +86,14 @@ public class GunfireController : BulletsCounter
             // --- Shoot Projectile Object ---
             if (projectilePrefab != null)
             {
-                if (BulletCount > 0)
+                if (BulletCount > 0 && _prepareToshoot)
                 {
                     GameObject muzzle = Instantiate(muzzlePrefab, muzzlePosition.transform);
                     Destroy(muzzle, 0.5f);
                     Instantiate(projectilePrefab, muzzlePosition.transform.position,
                         muzzlePosition.transform.rotation, transform);
                     BulletCount--;
-                    ChangeBulletCount();
-                    
+
                     if (Swith != null)
                     {
                         Swith.AddBulletCount(gameObject, BulletCount);
@@ -147,5 +144,10 @@ public class GunfireController : BulletsCounter
         {
             reloadSource.Play();
             projectileToDisableOnFire.SetActive(true);
+        }
+
+        public void PrepareToShoot(bool prepareToShoot)
+        {
+            _prepareToshoot = prepareToShoot;
         }
     }
