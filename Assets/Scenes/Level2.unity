@@ -18,8 +18,8 @@ RenderSettings:
   m_FogColor: {r: 0.6039216, g: 0.8702697, b: 0.93333334, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.04
-  m_LinearFogStart: 135
-  m_LinearFogEnd: 315.4
+  m_LinearFogStart: 27
+  m_LinearFogEnd: 64
   m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5712806773388290862, guid: d440b8e4227a49e4dabc300b9b029704, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 62.44944
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712806773388290862, guid: d440b8e4227a49e4dabc300b9b029704, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.5992
+      objectReference: {fileID: 0}
     - target: {fileID: 5712806774104453091, guid: d440b8e4227a49e4dabc300b9b029704, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
