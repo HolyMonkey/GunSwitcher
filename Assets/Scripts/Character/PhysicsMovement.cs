@@ -1,5 +1,4 @@
 using System;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Movement
@@ -18,14 +17,12 @@ namespace Movement
 
         private Vector3 _direction;
         private Vector3[] _directions;
-        private Quaternion[] _rotations;
         private int _counter;
         private Quaternion _targetRotation;
 
         private void Start()
         {
             _counter = 0;
-            _rotations = new [] { new Quaternion(0, 0, 0,0), new Quaternion(0, 180, 0,0),new Quaternion(0,180,0,0), new Quaternion(0,90,0,0)};
             _directions = new [] {new Vector3(0,0,-1), new Vector3(1,0,0), new Vector3(0,0,1), new Vector3(-1,0,0)};
             _direction = _directions[_counter];
         }
@@ -105,6 +102,8 @@ namespace Movement
                 
                 _targetRotation = transform.rotation * Quaternion.Euler(0, 90, 0);
             }
+            
+            Debug.Log(_counter);
             
             _direction = _directions[_counter];
         }

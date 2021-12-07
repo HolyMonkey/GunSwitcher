@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using Movement;
 using RootMotion.FinalIK;
@@ -138,6 +137,11 @@ namespace Weapon
                     _shooting = StartCoroutine(Shooting());
                 }
             }
+        }
+
+        public void OffShooting()
+        {
+            _shooting = null;
         }
     }
 }

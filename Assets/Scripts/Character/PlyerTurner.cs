@@ -16,8 +16,8 @@ public class PlyerTurner : MonoBehaviour
         if (other.TryGetComponent<Turn>(out Turn turn))
         {
             _movement.ChangeDirection(turn.IsTurnedLeft);
-            _gunfire.PrepareToShoot(true);
             Destroy(turn);
+            _gunfire.PrepareToShoot(true);
         }
 
         if (other.TryGetComponent<BeforeTurn>(out BeforeTurn beforeTurn))
