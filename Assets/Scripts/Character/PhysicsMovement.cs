@@ -14,15 +14,20 @@ namespace Movement
         [SerializeField] private float _speed;
         [SerializeField] private float _normalSpeed = 5f;
         [SerializeField] private GameObject _gunSwitcher;
+        [SerializeField] private float _rotationSpeed;
 
         private Vector3 _direction;
-        
-        public bool IsMoving { get; private set; } = false;
-
+        private Vector3[] _directions;
+        private Quaternion[] _rotations;
+        private int _counter;
+        private Quaternion _targetRotation;
 
         private void Start()
         {
-            _direction = -Vector3.forward;
+            _counter = 0;
+            _rotations = new [] { new Quaternion(0, 0, 0,0), new Quaternion(0, 180, 0,0),new Quaternion(0,180,0,0), new Quaternion(0,90,0,0)};
+            _directions = new [] {new Vector3(0,0,-1), new Vector3(1,0,0), new Vector3(0,0,1), new Vector3(-1,0,0)};
+            _direction = _directions[_counter];
         }
 
         private void OnEnable()
@@ -38,7 +43,6 @@ namespace Movement
         private void Update()
         {
             Move(_direction);
-            IsMoving = true;
         }
         
         private void OnGameStart()
@@ -50,8 +54,8 @@ namespace Movement
         private void Move(Vector3 direction)
         {
             Vector3 offset = direction * _speed;
-            IsMoving = true;
             _rigidbody.MovePosition(_rigidbody.position + offset * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * _rotationSpeed);
         }
 
         public void PickState(MovingState movingState)
@@ -73,10 +77,36 @@ namespace Movement
             }
         }
 
-        public void ChangeDirection(Vector3 direction, Quaternion rotation)
+        public void ChangeDirection(bool isTurnedLeft)
         {
-            _direction = direction;
-            transform.rotation = rotation;
+            if (isTurnedLeft)
+            {
+                if (_counter + 1 < _directions.Length)
+                {
+                    _counter++;
+                }
+                else
+                {
+                    _counter = 0;
+                }
+                
+                _targetRotation = transform.rotation * Quaternion.Euler(0, -90, 0);
+            }
+            else
+            {
+                if (_counter - 1 >= 0)
+                {
+                    _counter--;
+                }
+                else
+                {
+                    _counter = _directions.Length - 1;
+                }
+                
+                _targetRotation = transform.rotation * Quaternion.Euler(0, 90, 0);
+            }
+            
+            _direction = _directions[_counter];
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿// Toony Colors Pro+Mobile 2
-// (c) 2014-2021 Jean Moreno
+// (c) 2014-2020 Jean Moreno
 
 Shader "Toony Colors Pro 2/Hybrid Shader"
 {
@@ -18,7 +18,6 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 		[MainTexture] _BaseMap ("Albedo", 2D) = "white" {}
 		[TCP2ColorNoAlpha] _HColor ("Highlight Color", Color) = (1,1,1,1)
 		[TCP2ColorNoAlpha] _SColor ("Shadow Color", Color) = (0.2,0.2,0.2,1)
-		[Toggle(TCP2_SHADOW_LIGHT_COLOR)] _ShadowColorLightAtten ("Main Light affects Shadow Color", Float) = 1
 		[Toggle(TCP2_SHADOW_TEXTURE)] _UseShadowTexture ("Enable Shadow Albedo Texture", Float) = 0
 	//# IF_KEYWORD TCP2_SHADOW_TEXTURE
 		[NoScaleOffset] _ShadowBaseMap ("Shadow Albedo", 2D) = "gray" {}
@@ -83,7 +82,7 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 	//# IF_PROPERTY _EmissionChannel < 5 || _UseMobileMode == 1
 		_EmissionMap ("Texture#Texture (A)", 2D) = "white" {}
 	//# END_IF
-		[TCP2ColorNoAlpha(HDR)] _EmissionColor ("Color", Color) = (1,1,0,1)
+		[TCP2ColorNoAlpha] [HDR] _EmissionColor ("Color", Color) = (1,1,0,1)
 	//# END_IF
 	//# ========================================================
 
@@ -165,12 +164,9 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 	//# END_IF
 	//# 
 		_OutlineWidth ("Width", Range(0,10)) = 1
-		[TCP2MaterialKeywordEnumNoPrefix(Disabled,_,Constant,TCP2_OUTLINE_CONST_SIZE,Minimum,TCP2_OUTLINE_MIN_SIZE,Min Max,TCP2_OUTLINE_MIN_MAX_SIZE)] _OutlinePixelSizeType ("Pixel Size", Float) = 0
-	//# IF_KEYWORD TCP2_OUTLINE_MIN_SIZE || TCP2_OUTLINE_MIN_MAX_SIZE
+		[TCP2MaterialKeywordEnumNoPrefix(Disabled,_,Constant,TCP2_OUTLINE_CONST_SIZE,Minimum,TCP2_OUTLINE_MIN_SIZE)] _OutlinePixelSizeType ("Pixel Size", Float) = 0
+	//# IF_KEYWORD TCP2_OUTLINE_MIN_SIZE
 		_OutlineMinWidth ("Minimum Width (Pixels)", Float) = 1
-	//# END_IF
-	//# IF_KEYWORD TCP2_OUTLINE_MIN_MAX_SIZE
-		_OutlineMaxWidth ("Maximum Width (Pixels)", Float) = 1
 	//# END_IF
 	//# 
 		[TCP2MaterialKeywordEnumNoPrefix(Normal, _, Vertex Colors, TCP2_COLORS_AS_NORMALS, Tangents, TCP2_TANGENT_AS_NORMALS, UV1, TCP2_UV1_AS_NORMALS, UV2, TCP2_UV2_AS_NORMALS, UV3, TCP2_UV3_AS_NORMALS, UV4, TCP2_UV4_AS_NORMALS)]
@@ -227,12 +223,23 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 		Cull [_Cull]
 
 		HLSLINCLUDE
+		#if defined(TCP2_HYBRID_URP)
+
 			#define fixed half
 			#define fixed2 half2
 			#define fixed3 half3
 			#define fixed4 half4
 
-			#define TCP2_HYBRID_URP
+			#define UNITY_PASS_FORWARDBASE
+
+			// #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+			// This would cause a compilation error if URP isn't installed, so instead we use the dedicated
+			// "URP Support" file which contains all needed .hlslinc files embedded within a single file.
+
+			#include "TCP2 Hybrid URP Support.cginc"
+			#include "TCP2 Hybrid Include.cginc"
+
+		#endif
 		ENDHLSL
 
 		Pass
@@ -264,9 +271,7 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
 			#pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
 			#pragma multi_compile _ _SHADOWS_SOFT
-			#pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
-			#pragma multi_compile _ SHADOWS_SHADOWMASK
-			#pragma multi_compile _ _SCREEN_SPACE_OCCLUSION
+			#pragma multi_compile _ _MIXED_LIGHTING_SUBTRACTIVE
 
 			// -------------------------------------
 			// Unity keywords
@@ -277,7 +282,6 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			// Toony Colors Pro 2 keywords
 			#pragma shader_feature_local TCP2_MOBILE
 			#pragma shader_feature_local _ TCP2_RAMPTEXT TCP2_RAMP_CRISP TCP2_RAMP_BANDS TCP2_RAMP_BANDS_CRISP
-			#pragma shader_feature_local TCP2_SHADOW_LIGHT_COLOR
 			#pragma shader_feature_local TCP2_SHADOW_TEXTURE
 			#pragma shader_feature_local TCP2_SPECULAR
 			#pragma shader_feature_local _ TCP2_SPECULAR_STYLIZED TCP2_SPECULAR_CRISP
@@ -292,10 +296,11 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma shader_feature_local _ALPHATEST_ON
 			#pragma shader_feature_local _EMISSION
 
-			// This is using an existing keyword to separate fade/transparent behaviors
+			// This is actually using an existing keyword to separate fade/transparent behaviors
 			#pragma shader_feature_local _ _ALPHAPREMULTIPLY_ON
 
-			#include "TCP2 Hybrid Include.cginc"
+			// Force URP keyword to differentiate from built-in code
+			#pragma multi_compile TCP2_HYBRID_URP
 
 			ENDHLSL
 		}
@@ -342,7 +347,8 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma shader_feature_local _ TCP2_OUTLINE_LIGHTING_MAIN TCP2_OUTLINE_LIGHTING_ALL TCP2_OUTLINE_LIGHTING_INDIRECT
 			#pragma shader_feature_local _ TCP2_SHADOW_TEXTURE
 
-			#include "TCP2 Hybrid Include.cginc"
+			// Force URP keyword to differentiate from built-in code
+			#pragma multi_compile TCP2_HYBRID_URP
 
 			ENDHLSL
 		}
@@ -369,15 +375,11 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma fragment ShadowPassFragment
 
 			#pragma multi_compile_instancing
-			#pragma multi_compile_vertex _ _CASTING_PUNCTUAL_LIGHT_SHADOW
 
-			#pragma shader_feature_local _ALPHATEST_ON
-
-			#define SHADOW_CASTER_PASS
-			#include "TCP2 Hybrid Include.cginc"
+			#pragma multi_compile SHADOW_CASTER_PASS
+			#pragma multi_compile TCP2_HYBRID_URP
 
 			float3 _LightDirection;
-			float3 _LightPosition;
 
 			struct Attributes_Shadow
 			{
@@ -398,19 +400,13 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 				float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
 				float3 normalWS = TransformObjectToWorldNormal(input.normalOS);
 
-				#if CASTING_PUNCTUAL_LIGHT_SHADOW
-					float3 lightDirectionWS = normalize(_LightPosition - positionWS);
-				#else
-					float3 lightDirectionWS = _LightDirection;
-				#endif
+				float4 positionCS = TransformWorldToHClip(ApplyShadowBias(positionWS, normalWS, _LightDirection));
 
-				float4 positionCS = TransformWorldToHClip(ApplyShadowBias(positionWS, normalWS, lightDirectionWS));
-
-				#if UNITY_REVERSED_Z
-					positionCS.z = min(positionCS.z, UNITY_NEAR_CLIP_VALUE);
-				#else
-					positionCS.z = max(positionCS.z, UNITY_NEAR_CLIP_VALUE);
-				#endif
+			#if UNITY_REVERSED_Z
+				positionCS.z = min(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE);
+			#else
+				positionCS.z = max(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE);
+			#endif
 
 				return positionCS;
 			}
@@ -427,10 +423,11 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 
 			half4 ShadowPassFragment(Varyings_Shadow input) : SV_TARGET
 			{
+				half4 albedo = tex2D(_BaseMap, input.uv.xy).rgba;
+				albedo.rgb *= _BaseColor.rgb;
+				half alpha = albedo.a * _BaseColor.a;
+
 				#if defined(_ALPHATEST_ON)
-					half4 albedo = tex2D(_BaseMap, input.uv.xy).rgba;
-					albedo.rgb *= _BaseColor.rgb;
-					half alpha = albedo.a * _BaseColor.a;
 					clip(alpha - _Cutoff);
 				#endif
 
@@ -465,7 +462,8 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 
 			#pragma shader_feature_local _ALPHATEST_ON
 
-			#include "TCP2 Hybrid Include.cginc"
+			#pragma multi_compile DEPTH_ONLY_PASS
+			#pragma multi_compile TCP2_HYBRID_URP
 
 			struct Attributes_Depth
 			{
@@ -511,121 +509,9 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			ENDHLSL
 		}
 
-		//--------------------------------------------------------------------------------------------------------------------------------
-
-		Pass
-		{
-			Name "DepthNormals"
-			Tags { "LightMode" = "DepthNormals" }
-
-			ZWrite On
-			Cull [_Cull]
-
-			HLSLPROGRAM
-
-			// Required to compile gles 2.0 with stanard srp library
-			#pragma prefer_hlslcc gles
-			#pragma exclude_renderers d3d11_9x
-			#pragma target 2.0
-
-			#pragma vertex DepthNormalsVertex
-			#pragma fragment DepthNormalsFragment
-
-			#pragma multi_compile_instancing
-
-			#pragma shader_feature_local _ALPHATEST_ON
-
-			#define DEPTH_NORMALS_PASS
-			#include "TCP2 Hybrid Include.cginc"
-
-			struct Attributes_Depth
-			{
-				float4 position     : POSITION;
-				float2 texcoord     : TEXCOORD0;
-				float3 normal       : NORMAL;
-				UNITY_VERTEX_INPUT_INSTANCE_ID
-			};
-
-			struct Varyings_Depth
-			{
-				float2 uv           : TEXCOORD0;
-				float4 positionCS   : SV_POSITION;
-				float3 normalWS     : TEXCOORD1;
-				UNITY_VERTEX_INPUT_INSTANCE_ID
-				UNITY_VERTEX_OUTPUT_STEREO
-			};
-
-			Varyings_Depth DepthNormalsVertex(Attributes_Depth input)
-			{
-				Varyings_Depth output = (Varyings_Depth)0;
-				UNITY_SETUP_INSTANCE_ID(input);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
-
-				output.uv = TRANSFORM_TEX(input.texcoord, _BaseMap);
-				output.positionCS = TransformObjectToHClip(input.position.xyz);
-				float3 normalWS = TransformObjectToWorldNormal(input.normal);
-				output.normalWS = NormalizeNormalPerVertex(normalWS);
-				return output;
-			}
-
-			half4 DepthNormalsFragment(Varyings_Depth input) : SV_TARGET
-			{
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
-
-				half4 albedo = tex2D(_BaseMap, input.uv.xy).rgba;
-				half alpha = albedo.a * _BaseColor.a;
-
-				#if defined(_ALPHATEST_ON)
-					clip(alpha - _Cutoff);
-				#endif
-
-				return float4(PackNormalOctRectEncode(TransformWorldToViewDir(input.normalWS, true)), 0.0, 0.0);
-			}
-
-			ENDHLSL
-		}
-
-		//--------------------------------------------------------------------------------------------------------------------------------
-		
-		Pass
-		{
-			Name "Meta"
-			Tags { "LightMode"="Meta" }
-			
-			Cull Off
-
-			HLSLPROGRAM
-			// Required to compile gles 2.0 with standard SRP library
-			// All shaders must be compiled with HLSLcc and currently only gles is not using HLSLcc by default
-			#pragma prefer_hlslcc gles
-			#pragma exclude_renderers d3d11_9x
-			#pragma target 3.0
-
-			#pragma vertex Vertex
-			#pragma fragment Fragment
-
-			//--------------------------------------
-			// Toony Colors Pro 2 keywords
-			#pragma shader_feature_local TCP2_MOBILE
-			#pragma shader_feature_local TCP2_SPECULAR
-			#pragma shader_feature_local _ALPHATEST_ON
-			#pragma shader_feature_local _EMISSION
-
-			#undef UNITY_SHOULD_SAMPLE_SH
-			#define UNITY_SHOULD_SAMPLE_SH 0
-
-			#ifndef UNITY_PASS_META
-				#define UNITY_PASS_META
-			#endif
-			#include "TCP2 Hybrid Include.cginc"
-
-			ENDHLSL
-		}
-		
-		//--------------------------------------------------------------------------------------------------------------------------------
-		
 		// Depth prepass
 		// UsePass "Universal Render Pipeline/Lit/DepthOnly"
+
 	}
 
 	//================================================================================================================================
@@ -648,21 +534,26 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 		ZWrite [_ZWrite]
 		Cull [_Cull]
 
-		CGINCLUDE
-			// Note: CG code is only used for the built-in render pipeline
+		HLSLINCLUDE
+		#if !defined(TCP2_HYBRID_URP)
+
 			#include "UnityCG.cginc"
 			#include "UnityLightingCommon.cginc"
 			#include "UnityStandardUtils.cginc"
 			#include "Lighting.cginc"
 			#include "AutoLight.cginc"
-		ENDCG
+
+			#include "TCP2 Hybrid Include.cginc"
+
+		#endif
+		ENDHLSL
 
 		Pass
 		{
 			Name "Main"
 			Tags { "LightMode"="ForwardBase" }
 
-			CGPROGRAM
+			HLSLPROGRAM
 			// Required to compile gles 2.0 with standard SRP library
 			// All shaders must be compiled with HLSLcc and currently only gles is not using HLSLcc by default
 			#pragma prefer_hlslcc gles
@@ -689,7 +580,6 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			// Toony Colors Pro 2 keywords
 			#pragma shader_feature_local TCP2_MOBILE
 			#pragma shader_feature_local _ TCP2_RAMPTEXT TCP2_RAMP_CRISP TCP2_RAMP_BANDS TCP2_RAMP_BANDS_CRISP
-			#pragma shader_feature_local TCP2_SHADOW_LIGHT_COLOR
 			#pragma shader_feature_local TCP2_SHADOW_TEXTURE
 			#pragma shader_feature_local TCP2_SPECULAR
 			#pragma shader_feature_local _ TCP2_SPECULAR_STYLIZED TCP2_SPECULAR_CRISP
@@ -704,23 +594,24 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma shader_feature_local _ALPHATEST_ON
 			#pragma shader_feature_local _EMISSION
 
-			// This is using an existing keyword to separate fade/transparent behaviors
+			// This is actually using an existing keyword to separate fade/transparent behaviors
 			#pragma shader_feature_local _ _ALPHAPREMULTIPLY_ON
+
+			// Force URP keyword to differentiate from built-in code
+			/// #pragma multi_compile TCP2_HYBRID_URP
 
 			#define UNITY_INSTANCED_SH
 			#include "UnityShaderVariables.cginc"
 			#include "UnityShaderUtilities.cginc"
 
+			//Shader does not support lightmap thus we always want to fallback to SH.
 			#undef UNITY_SHOULD_SAMPLE_SH
-			#define UNITY_SHOULD_SAMPLE_SH 1
+			#define UNITY_SHOULD_SAMPLE_SH (!defined(UNITY_PASS_FORWARDADD) && !defined(UNITY_PASS_PREPASSBASE) && !defined(UNITY_PASS_SHADOWCASTER) && !defined(UNITY_PASS_META))
 			#include "AutoLight.cginc"
 
-			#if !defined(UNITY_PASS_FORWARDBASE)
-				#define UNITY_PASS_FORWARDBASE
-			#endif
-			#include "TCP2 Hybrid Include.cginc"
+			#pragma multi_compile UNITY_PASS_FORWARDBASE
 
-			ENDCG
+			ENDHLSL
 		}
 
 		Pass
@@ -733,7 +624,7 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			ZWrite Off
 			ZTest LEqual
 
-			CGPROGRAM
+			HLSLPROGRAM
 			// Required to compile gles 2.0 with standard SRP library
 			// All shaders must be compiled with HLSLcc and currently only gles is not using HLSLcc by default
 			#pragma prefer_hlslcc gles
@@ -745,7 +636,7 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 
 			#pragma multi_compile_fog
 			#pragma multi_compile_instancing
-			#pragma multi_compile_fwdadd_fullshadows
+			#pragma multi_compile_fwdadd
 
 			// -------------------------------------
 			// Material keywords
@@ -755,7 +646,6 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			// Toony Colors Pro 2 keywords
 			#pragma shader_feature_local TCP2_MOBILE
 			#pragma shader_feature_local _ TCP2_RAMPTEXT TCP2_RAMP_CRISP TCP2_RAMP_BANDS TCP2_RAMP_BANDS_CRISP
-			#pragma shader_feature_local TCP2_SHADOW_LIGHT_COLOR
 			#pragma shader_feature_local TCP2_SHADOW_TEXTURE
 			#pragma shader_feature_local TCP2_SPECULAR
 			#pragma shader_feature_local _ TCP2_SPECULAR_STYLIZED TCP2_SPECULAR_CRISP
@@ -765,17 +655,20 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma shader_feature_local _ALPHATEST_ON
 			#pragma shader_feature_local _EMISSION
 
-			// This is using an existing keyword to separate fade/transparent behaviors
+			// This is actually using an existing keyword to separate fade/transparent behaviors
 			#pragma shader_feature_local _ _ALPHAPREMULTIPLY_ON
+
+			// Force URP keyword to differentiate from built-in code
+			/// #pragma multi_compile TCP2_HYBRID_URP
 
 			#define UNITY_INSTANCED_SH
 			#include "UnityShaderVariables.cginc"
 			#include "UnityShaderUtilities.cginc"
 			#include "AutoLight.cginc"
 
-			#include "TCP2 Hybrid Include.cginc"
+			#pragma multi_compile UNITY_PASS_FORWARDADD
 
-			ENDCG
+			ENDHLSL
 		}
 
 		// ShadowCaster & Depth Pass
@@ -788,18 +681,13 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma vertex vertex_shadow
 			#pragma fragment fragment_shadow
 			#pragma target 2.0
-			
 			#pragma multi_compile_shadowcaster
 			#pragma multi_compile_instancing
-			
-			#pragma shader_feature_local _ALPHATEST_ON
-
-			#include "TCP2 Hybrid Include.cginc"
+			#include "UnityCG.cginc"
 
 			struct Varyings_Shadow
 			{
 				V2F_SHADOW_CASTER;
-				float2 uv : TEXCOORD1;
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
@@ -809,53 +697,13 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 				UNITY_SETUP_INSTANCE_ID(v);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 				TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
-				o.uv = TRANSFORM_TEX(v.texcoord, _BaseMap);
 				return o;
 			}
-			
+
 			float4 fragment_shadow (Varyings_Shadow i) : SV_Target
 			{
-				#if defined(_ALPHATEST_ON)
-					half4 albedo = tex2D(_BaseMap, i.uv.xy).rgba;
-					albedo.rgb *= _BaseColor.rgb;
-					half alpha = albedo.a * _BaseColor.a;
-					clip(alpha - _Cutoff);
-				#endif
 				SHADOW_CASTER_FRAGMENT(i)
 			}
-			ENDCG
-		}
-		
-		Pass
-		{
-			Name "Meta"
-			Tags { "LightMode"="Meta" }
-
-			CGPROGRAM
-			// Required to compile gles 2.0 with standard SRP library
-			// All shaders must be compiled with HLSLcc and currently only gles is not using HLSLcc by default
-			#pragma prefer_hlslcc gles
-			#pragma exclude_renderers d3d11_9x
-			#pragma target 3.0
-
-			#pragma vertex Vertex
-			#pragma fragment Fragment
-
-			//--------------------------------------
-			// Toony Colors Pro 2 keywords
-			#pragma shader_feature_local TCP2_MOBILE
-			#pragma shader_feature_local TCP2_SPECULAR
-			#pragma shader_feature_local _ALPHATEST_ON
-			#pragma shader_feature_local _EMISSION
-
-			#undef UNITY_SHOULD_SAMPLE_SH
-			#define UNITY_SHOULD_SAMPLE_SH 0
-
-			#if !defined(UNITY_PASS_META)
-				#define UNITY_PASS_META
-			#endif
-			#include "TCP2 Hybrid Include.cginc"
-
 			ENDCG
 		}
 
@@ -867,7 +715,7 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			Tags { "LightMode"="ForwardBase" }
 			Cull Front
 
-			CGPROGRAM
+			HLSLPROGRAM
 			#pragma target 3.0
 
 			#pragma vertex vertex_outline
@@ -890,9 +738,10 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 			#pragma shader_feature_local _ TCP2_OUTLINE_LIGHTING_MAIN TCP2_OUTLINE_LIGHTING_INDIRECT
 			#pragma shader_feature_local _ TCP2_SHADOW_TEXTURE
 
-			#include "TCP2 Hybrid Include.cginc"
+			// Force URP keyword to differentiate from built-in code
+			// #pragma multi_compile TCP2_HYBRID_URP
 
-			ENDCG
+			ENDHLSL
 		}
 		*/
 	}
