@@ -1,14 +1,14 @@
 ﻿using System;
 using _GAME.Common;
-using Movement;
 using RootMotion.FinalIK;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
     public Action Die;
+    public UnityAction <bool> AddExplosionForce;
 
-    [SerializeField] private EnemyAnimation _enemyAnimation;
     [SerializeField] private Transform _hitTarget;
     [SerializeField] private Ragdoll _ragdoll;
     [SerializeField] private AimIK _aim;
@@ -16,45 +16,51 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AutoShooting _autoShooting;
     [SerializeField] private Collider _weaponTrigger;
     [SerializeField] private bool _alive = true;
-    
-    private EnemiesTrigger _enemiesTrigger;
-    private ZoneEffect _zoneEffect;
-    
+    [SerializeField] private GameObject _particleExplosionParts;
+
     public Transform HitTarget => _hitTarget;
-
-    [ContextMenu("Die")]
-    public void DieFast()
-    {
-        Die?.Invoke();
-    }
-
-    private void Awake()
-    {
-        _enemiesTrigger = GetComponentInParent<EnemiesTrigger>();
-    }
 
     private void OnEnable()
     {
         _laser.SetActive(false);
         Die += Dead;
+        AddExplosionForce += AddExplosion;
     }
 
     private void OnDisable()
     {
         Die -= Dead;
+        AddExplosionForce -= AddExplosion;
     }
 
     private void Dead()
     {
-        // _zoneEffect = GetComponentInChildren<ZoneEffect>();
-        // Destroy(_zoneEffect.gameObject);
-        
         _weaponTrigger.enabled = false;
         _aim.enabled = false;
         _alive = false;
         _laser.SetActive(false);
         _autoShooting.enabled = false;
-        _ragdoll.ActivateRagdoll();
+    }
+
+    private void AddExplosion(bool isAddExplosion)
+    {
+        if (isAddExplosion)
+        {
+            if (_particleExplosionParts != null)
+            {
+                var partsOfEnemy = Instantiate(_particleExplosionParts, transform.position, transform.rotation);
+                Destroy(partsOfEnemy, 3f);
+            }
+         
+            PlayerHealth playerPosition = FindObjectOfType<PlayerHealth>();
+            Vector3 offset = new Vector3(0, -3, 0);
+            Vector3 direction =  transform.position - (playerPosition.transform.position + offset);
+            _ragdoll.ActivateRagdoll(direction);
+        }
+        else
+        {
+            _ragdoll.ActivateRagdoll(Vector3.zero);
+        }
     }
 
     public void TurnOnLaser()

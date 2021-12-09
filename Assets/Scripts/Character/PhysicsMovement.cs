@@ -102,9 +102,7 @@ namespace Movement
                 
                 _targetRotation = transform.rotation * Quaternion.Euler(0, 90, 0);
             }
-            
-            Debug.Log(_counter);
-            
+
             _direction = _directions[_counter];
         }
     }

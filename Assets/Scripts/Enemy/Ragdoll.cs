@@ -13,8 +13,8 @@ namespace _GAME.Common
         public List<Rigidbody> Rigidbodies = new List<Rigidbody>();
         public List<Collider> Colliders = new List<Collider>();
 
-        public ForceMode ForceMode { get; set; }
-        public float ForcePower { get; set; }
+        private ForceMode ForceMode = ForceMode.Impulse;
+        private float ForcePower = 8;
         public Vector3 ForceDirection { get; set; }
         public bool IsTriggered { get; set; } = false;
 
@@ -49,7 +49,7 @@ namespace _GAME.Common
         }
 
         [ContextMenu("Activate Ragdoll")]
-        public void ActivateRagdoll()
+        public void ActivateRagdoll(Vector3 forceDirection)
         {
             if (MainCollider)
             {
@@ -77,7 +77,7 @@ namespace _GAME.Common
                 rb.isKinematic = false;
                 rb.useGravity = true;
 
-                rb.AddForce(ForceDirection * ForcePower, ForceMode);
+                rb.AddForce(forceDirection * ForcePower, ForceMode);
             }
         }
 

@@ -19326,3 +19326,4 @@ MonoBehaviour:
   _rigidbody: {fileID: 3002348591099809459}
   speed: 40
   _hitEffect: {fileID: 198472063183687506, guid: e3f361eacdeb09440850ac7397930cba, type: 3}
+  _isAddExplosin: 1
