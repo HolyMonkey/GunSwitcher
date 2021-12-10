@@ -14,7 +14,7 @@ namespace _GAME.Common
         public List<Collider> Colliders = new List<Collider>();
 
         private ForceMode ForceMode = ForceMode.Impulse;
-        private float ForcePower = 8;
+        [SerializeField] private float ForcePower = 8;
         public Vector3 ForceDirection { get; set; }
         public bool IsTriggered { get; set; } = false;
 
