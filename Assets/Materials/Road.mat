@@ -35,7 +35,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 920dabe7e2fb1f04ea18bbfdafae47f0, type: 3}
-        m_Scale: {x: 1, y: 20}
+        m_Scale: {x: 1, y: 9}
         m_Offset: {x: 1, y: 3}
     - _BlendTex1:
         m_Texture: {fileID: 0}
