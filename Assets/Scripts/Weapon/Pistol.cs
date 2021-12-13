@@ -117,6 +117,11 @@ namespace Weapon
 
         private void PickTarget()
         {
+            if (enabled == false)
+            {
+                return;
+            }
+            
             if (_finder.Targets.Count > 0)
             {
                 _currentTarget = _finder.Targets.FirstOrDefault(t => t.enabled = true);
@@ -132,6 +137,7 @@ namespace Weapon
             
             if (_currentTarget != null)
             {
+
                 if (_shooting == null)
                 {
                     _shooting = StartCoroutine(Shooting());

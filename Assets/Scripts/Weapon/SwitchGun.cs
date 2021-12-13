@@ -20,12 +20,15 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] private Transform _leftGunTransform;
     [SerializeField] private Transform _rightGunTransform;
     [SerializeField] private Transform _topGunTransform;
+    [SerializeField] private GunfireController _gunfire;
+    [SerializeField] private Pistol _pistol;
+    [SerializeField] private Pistol _assault;
 
-    private Transform _gunTransform;
-    private int _assaultBulCount;
-    private int _rocketBulletsCount;
-    private Quaternion _rotation;
+    public int _assaultBulCount;
+    public int _rocketBulletsCount;
     
+    private Quaternion _rotation;
+    private Transform _gunTransform;
     private int _currentWeaponIndex;
 
     public List<Weapon> Weapons => _weapons;
@@ -35,9 +38,10 @@ public class SwitchGun : MonoBehaviour
 
     private void Start()
     {
-       // _rotation =  Quaternion.Euler(0, -90, 0);
-        _assaultBulCount = 20;
-        _rocketBulletsCount = 3;
+        _pistol.BulletCount = 999;
+        _assault.BulletCount = _assaultBulCount;
+        _gunfire.BulletCount = _rocketBulletsCount;
+        
         OnAssaultBulletChanged?.Invoke(_assaultBulCount);
         OnRocketBulletChanged?.Invoke(_rocketBulletsCount);
 
@@ -148,13 +152,11 @@ public class SwitchGun : MonoBehaviour
     {
         if (gun.TryGetComponent(out AssaultChecker automate))
         {
-            _assaultBulCount = count;
-            OnAssaultBulletChanged?.Invoke(_assaultBulCount);
+            OnAssaultBulletChanged?.Invoke(count);
         }
         else if (gun.TryGetComponent(out RocketChecker rocket))
         {
-            _rocketBulletsCount = count;
-            OnRocketBulletChanged?.Invoke(_rocketBulletsCount);
+            OnRocketBulletChanged?.Invoke(count);
         }
     }
 

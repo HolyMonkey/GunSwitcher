@@ -9,7 +9,6 @@ namespace Weapon
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float speed;
         [SerializeField] private ParticleSystem _hitEffect;
-        [SerializeField] private bool _isAddExplosin;
 
         public Rigidbody Rigidbody => _rigidbody;
         public float Speed => speed;
@@ -24,7 +23,7 @@ namespace Weapon
                 }
 
                 enemy.Die?.Invoke();
-                enemy.AddExplosionForce(_isAddExplosin);
+                enemy.AddExplosionForce();
             }
 
             if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))

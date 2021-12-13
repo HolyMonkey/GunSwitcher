@@ -11,6 +11,7 @@ public class RocketShells : MonoBehaviour
     
     private void OnEnable()
     {
+        _bulletCount = _switchGun._rocketBulletsCount;
         _switchGun.OnRocketBulletChanged += OnBulletCountChanged;
         DrawShells();
     }
@@ -31,7 +32,7 @@ public class RocketShells : MonoBehaviour
     {
         if (_bulletCount > _shells.Count)
         {
-            return;
+            _bulletCount = _shells.Count;
         }
         
         for (int i = 0; i < _shells.Count; i++)

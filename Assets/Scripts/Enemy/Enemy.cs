@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     public Action Die;
-    public UnityAction <bool> AddExplosionForce;
+    public UnityAction  AddExplosionForce;
 
     [SerializeField] private Transform _hitTarget;
     [SerializeField] private Ragdoll _ragdoll;
@@ -42,25 +42,18 @@ public class Enemy : MonoBehaviour
         _autoShooting.enabled = false;
     }
 
-    private void AddExplosion(bool isAddExplosion)
+    private void AddExplosion()
     {
-        if (isAddExplosion)
-        {
-            if (_particleExplosionParts != null)
-            {
-                var partsOfEnemy = Instantiate(_particleExplosionParts, transform.position, transform.rotation);
-                Destroy(partsOfEnemy, 3f);
-            }
+        if (_particleExplosionParts != null)
+        { 
+            var partsOfEnemy = Instantiate(_particleExplosionParts, transform.position, transform.rotation); 
+            Destroy(partsOfEnemy, 3f);
+        }
          
-            PlayerHealth playerPosition = FindObjectOfType<PlayerHealth>();
-            Vector3 offset = new Vector3(0, -3, 0);
-            Vector3 direction =  transform.position - (playerPosition.transform.position + offset);
-            _ragdoll.ActivateRagdoll(direction);
-        }
-        else
-        {
-            _ragdoll.ActivateRagdoll(Vector3.zero);
-        }
+        PlayerHealth playerPosition = FindObjectOfType<PlayerHealth>();
+        Vector3 offset = new Vector3(0, -3, 0);
+        Vector3 direction =  transform.position - (playerPosition.transform.position + offset);
+        _ragdoll.ActivateRagdoll(direction);
     }
 
     public void TurnOnLaser()
