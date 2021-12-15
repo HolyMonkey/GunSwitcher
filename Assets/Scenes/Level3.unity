@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 886592453593162632, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.53
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: 886592453773796990, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -1120,6 +1120,10 @@ PrefabInstance:
     - target: {fileID: 1812057015172783215, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
       propertyPath: _assaultBulCount
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085943549696790600, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 55.54
       objectReference: {fileID: 0}
     - target: {fileID: 3336836169996638136, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
       propertyPath: m_Materials.Array.data[0]

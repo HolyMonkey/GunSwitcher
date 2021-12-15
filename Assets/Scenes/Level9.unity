@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 58.89
       objectReference: {fileID: 0}
+    - target: {fileID: 1661202811429558863, guid: 541869b82ef098a4ba3f3bad8c7e816d, type: 3}
+      propertyPath: _assaultBulCount
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2389570668065408296, guid: 541869b82ef098a4ba3f3bad8c7e816d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 38.35

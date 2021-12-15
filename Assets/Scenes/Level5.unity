@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.18964621
       objectReference: {fileID: 0}
+    - target: {fileID: 5772545769467872244, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 35.492256
+      objectReference: {fileID: 0}
     - target: {fileID: 5772545769467872249, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 1
@@ -166,9 +170,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 26.86
       objectReference: {fileID: 0}
+    - target: {fileID: 5772545770600995103, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.37
+      objectReference: {fileID: 0}
     - target: {fileID: 5772545770760925186, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753394408515950077, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 67.46608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753394408515950077, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.8103
       objectReference: {fileID: 0}
     - target: {fileID: 6991650039427802984, guid: e3ff90ef4c556e14189e3d285345f22d, type: 3}
       propertyPath: m_LocalPosition.x

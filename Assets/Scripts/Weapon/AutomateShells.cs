@@ -12,7 +12,7 @@ public class AutomateShells : MonoBehaviour
     
     private void OnEnable()
     {
-        _bulletCount = _switchGun._assaultBulCount;
+        _bulletCount = _switchGun._assaultBulCount / 2;
         _switchGun.OnAssaultBulletChanged += OnBulletCountChanged;
         DrawShells();
     }
@@ -25,7 +25,7 @@ public class AutomateShells : MonoBehaviour
     
     private void OnBulletCountChanged(int count)
     {
-        _bulletCount = count;
+        _bulletCount = count / 2;
         DrawShells();
     }
 

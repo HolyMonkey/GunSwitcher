@@ -19,8 +19,10 @@ namespace Levels
         [SerializeField] private GameObject _finishCanvas;
         [SerializeField] private FightImput _fightImput;
         [SerializeField] private ClampCharacterRotation _rotation;
-        
-        private void OnTriggerEnter(Collider other)
+        [SerializeField] private GameObject _bulletCountUi;
+        [SerializeField] private GameObject _levelProgressUi;
+
+            private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out PhysicsMovement physicsMovement))
             {
@@ -35,7 +37,9 @@ namespace Levels
                 _secondHand.enabled = false;
                 _puncher.StartFighting();
                 _fightImput.SetActiveScreen(true);
-                _player.GetComponentInChildren<Player>().transform.rotation = _fightPoint.rotation; 
+                _bulletCountUi.SetActive(false);
+                _levelProgressUi.SetActive(false);
+                _player.GetComponentInChildren<Player>().transform.rotation = _fightPoint.rotation;
 
                 foreach (var weapon in _gunSwicher.Weapons)
                 {

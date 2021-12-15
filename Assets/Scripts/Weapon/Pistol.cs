@@ -73,7 +73,7 @@ namespace Weapon
                 Bullet bullet = Instantiate(_bulletPrefab, _shootPosition.position, transform.rotation);
                 bullet.Rigidbody.AddForce(direction * bullet.Speed, ForceMode.VelocityChange);
 
-                if (BulletCount > 50)
+                if (BulletCount > 80)
                 {
                 }
                 else
