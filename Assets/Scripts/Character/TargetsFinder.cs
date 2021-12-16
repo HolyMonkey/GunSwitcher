@@ -11,7 +11,7 @@ namespace Movement
 
         [SerializeField] private List<Enemy> _targets;
 
-        public List<Enemy> Targets => _targets; // to refactor
+        public List<Enemy> Targets => _targets;
         
         private void OnTriggerEnter(Collider other)
         {

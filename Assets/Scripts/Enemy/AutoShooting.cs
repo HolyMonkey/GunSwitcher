@@ -9,17 +9,9 @@ namespace _GAME.Common
 {
     public class AutoShooting : MonoBehaviour
     {
-        [SerializeField] private int _distance;
-        [SerializeField] private float _shootDelay = 0.5f;
-        [SerializeField] private LayerMask _targetLayerMask;
-        
         [SerializeField] private ParticleSystem _muzzleFlare;
         [SerializeField] private Bullet _bulletPrefab;
         [SerializeField] private Transform _shootPosition;
-        [SerializeField] private EnemiesTrigger _enemiesTrigger;
-        
-        [SerializeField] private AimController _aim;
-        
 
         private void OnTriggerEnter(Collider other)
         {
@@ -30,19 +22,6 @@ namespace _GAME.Common
                 Shoot(direction);
             }
         }
-
-        // private void PreparationShoot()
-        // {
-        //     RaycastHit hit;
-        //     
-        //     if (Physics.Raycast(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward), out hit, _distance, _targetLayerMask))
-        //     {
-        //         Debug.DrawRay(_shootPosition.position, _shootPosition.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-        //         Vector3 direction = (hit.point - _shootPosition.position).normalized;
-        //         
-        //         Shoot(direction);
-        //     }
-        // }
 
         private void Shoot(Vector3 direction)
         {

@@ -8,17 +8,12 @@ public class LevelProgress : MonoBehaviour
 
     [SerializeField] private Transform _startPosition;
     [SerializeField] private Transform _finishPosition;
-
     [SerializeField] private Transform _characterPosition;
-
     [SerializeField] private Slider _levelSlider;
 
     private float _levelDistance;
     private bool _levelComplete = false;
     private bool _levelLoss = false;
-
-    public bool LevelComplete => _levelComplete;
-    public bool LevelLoss => _levelLoss;
 
     private void OnEnable()
     {
@@ -55,5 +50,4 @@ public class LevelProgress : MonoBehaviour
     {
         _levelLoss = true;
     }
-
 }

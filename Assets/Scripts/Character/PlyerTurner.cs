@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class PlyerTurner : MonoBehaviour
 {
-    private PhysicsMovement _movement;
     [SerializeField] private GunfireController _gunfire;
+    
+    private PhysicsMovement _movement;
 
     private void Start()
     {
@@ -16,8 +17,9 @@ public class PlyerTurner : MonoBehaviour
         if (other.TryGetComponent<Turn>(out Turn turn))
         {
             _movement.ChangeDirection(turn.IsTurnedLeft);
-            Destroy(turn);
             _gunfire.PrepareToShoot(true);
+            
+            Destroy(turn);
         }
 
         if (other.TryGetComponent<BeforeTurn>(out BeforeTurn beforeTurn))

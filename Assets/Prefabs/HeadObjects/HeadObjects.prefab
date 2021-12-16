@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 40
+  _hitEffect: {fileID: 102696, guid: 185035e4680c4b344b62bf5ace4674b8, type: 3}
 --- !u!1 &1207958741769550081
 GameObject:
   m_ObjectHideFlags: 0
@@ -28938,6 +28939,7 @@ MonoBehaviour:
   _physicsMovement: {fileID: 3030459346373937621}
   _damageAvailability: 1
   _endGamePanel: {fileID: 3030459346721744365}
+  _fightCanvas: {fileID: 3030459346089735161}
 --- !u!114 &126349177914324866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28955,6 +28957,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   _health: 150
   _victoryPanel: {fileID: 3030459345920445739}
+  _fightCanvas: {fileID: 3030459346089735161}
 --- !u!114 &3406652119044011590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30147,7 +30150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3030459346651333299}
   m_LocalRotation: {x: 0, y: 0.9848078, z: 0, w: 0.17364825}
-  m_LocalPosition: {x: -1, y: 0, z: -1.19}
+  m_LocalPosition: {x: -1.15, y: 0, z: -1.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3030459347089883550}
@@ -41324,7 +41327,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3030459347238622011}
-  m_LocalRotation: {x: -0.000000003368818, y: 0.97410935, z: -0.22607751, w: -0.000000014515362}
+  m_LocalRotation: {x: 0.000000001944988, y: 0.97410935, z: -0.2260775, w: 0.000000008380449}
   m_LocalPosition: {x: 0.028000355, y: 6.2699995, z: 21.819998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -42643,6 +42646,7 @@ MonoBehaviour:
   _animator: {fileID: 3030459347315950765}
   _health: 200
   _victoryPanel: {fileID: 3030459345920445739}
+  _fightCanvas: {fileID: 3030459346089735161}
 --- !u!114 &3030459347701588204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43891,6 +43895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 30
+  _hitEffect: {fileID: 102696, guid: 185035e4680c4b344b62bf5ace4674b8, type: 3}
 --- !u!1 &3030459347325186285
 GameObject:
   m_ObjectHideFlags: 0
@@ -48643,6 +48648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 30
+  _hitEffect: {fileID: 102696, guid: 185035e4680c4b344b62bf5ace4674b8, type: 3}
 --- !u!1 &3030459347325386251
 GameObject:
   m_ObjectHideFlags: 0

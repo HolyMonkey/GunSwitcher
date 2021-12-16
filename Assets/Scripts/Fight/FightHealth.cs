@@ -10,6 +10,7 @@ public class FightHealth : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private int _health;
     [SerializeField] private GameObject _victoryPanel;
+    [SerializeField] private GameObject _fightCanvas;
 
         public void TakeDamage(int damage)
     {
@@ -30,6 +31,7 @@ public class FightHealth : MonoBehaviour
             else
             {
                 _victoryPanel.SetActive(true);
+                _fightCanvas.SetActive(false);
                 _animator.SetBool("Die", true);
             }
         }

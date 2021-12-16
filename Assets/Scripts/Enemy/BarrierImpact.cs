@@ -6,8 +6,6 @@ public class BarrierImpact : MonoBehaviour
     [SerializeField] private Rigidbody[] _parts;
     [SerializeField] private Collider _mainCollider;
 
-    private ZoneEffect _zoneEffect;
-    
     [ContextMenu("Activate")]
     public void ActiveParts()
     {
@@ -16,10 +14,8 @@ public class BarrierImpact : MonoBehaviour
         foreach (var part in _parts)
         {
             part.constraints = RigidbodyConstraints.None;
+            part.GetComponent<Collider>().isTrigger = true;
         }
-
-        // _zoneEffect = GetComponentInChildren<ZoneEffect>();
-        // Destroy(_zoneEffect.gameObject);
     }
     
     private void OnCollisionEnter(Collision other)

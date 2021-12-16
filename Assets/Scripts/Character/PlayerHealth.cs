@@ -7,13 +7,15 @@ public class PlayerHealth : MonoBehaviour
     public Action Die;
     
     [SerializeField] private float _health;
-    [SerializeField] private bool _isAlive => _health > 0;
     [SerializeField] private Transform _hitTarget;
 
     [SerializeField] private PhysicsMovement _physicsMovement;
     [SerializeField] private bool _damageAvailability = true;
     [SerializeField] private GameObject _endGamePanel;
+    [SerializeField] private GameObject _fightCanvas;
 
+    private bool _isAlive => _health > 0;
+    
     public Transform HitTarget => _hitTarget;
 
     public void TakeDamage(float damage)
@@ -34,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
         {
             _endGamePanel.gameObject.SetActive(true);
             _physicsMovement.PickState(MovingState.Stop);
+            _fightCanvas.SetActive(false);
             Die?.Invoke();
         }
     }
