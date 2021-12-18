@@ -612,15 +612,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648815901048784086, guid: f6535139df21fb84abb1167290812f91, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000008380449
+      value: 0.0000000083804474
       objectReference: {fileID: 0}
     - target: {fileID: 7648815901048784086, guid: f6535139df21fb84abb1167290812f91, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000001944988
+      value: 0.0000000019449875
       objectReference: {fileID: 0}
     - target: {fileID: 7648815901048784086, guid: f6535139df21fb84abb1167290812f91, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.2260775
+      value: -0.22607751
       objectReference: {fileID: 0}
     - target: {fileID: 8632279131196637989, guid: f6535139df21fb84abb1167290812f91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,6 +677,14 @@ PrefabInstance:
     - target: {fileID: 8750047221703694157, guid: f6535139df21fb84abb1167290812f91, type: 3}
       propertyPath: m_Name
       value: Level6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750047221904574786, guid: f6535139df21fb84abb1167290812f91, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750047221904574786, guid: f6535139df21fb84abb1167290812f91, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 8774648699462006401, guid: f6535139df21fb84abb1167290812f91, type: 3}
       propertyPath: m_LocalPosition.x

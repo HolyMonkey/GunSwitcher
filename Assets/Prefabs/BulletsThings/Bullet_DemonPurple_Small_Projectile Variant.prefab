@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836675779974994, guid: 9e80e89bac104d14f9a55cf85b640e28, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.597
+      value: 13.999
       objectReference: {fileID: 0}
     - target: {fileID: 4836675779974994, guid: 9e80e89bac104d14f9a55cf85b640e28, type: 3}
       propertyPath: m_LocalRotation.w
@@ -205,4 +205,3 @@ MonoBehaviour:
   _rigidbody: {fileID: 3586294663237989047}
   speed: 40
   _hitEffect: {fileID: 198344661946723368, guid: 7bef351ddc33ae044b671a7664396a20, type: 3}
-  _isAddExplosin: 1

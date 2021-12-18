@@ -1037,6 +1037,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -158.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5226062045495904395, guid: d440b8e4227a49e4dabc300b9b029704, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226062045495904395, guid: d440b8e4227a49e4dabc300b9b029704, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 5226062045696333443, guid: d440b8e4227a49e4dabc300b9b029704, type: 3}
       propertyPath: m_RootOrder
       value: 0
