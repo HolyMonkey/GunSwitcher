@@ -58,7 +58,7 @@ public class ProjectileController : MonoBehaviour
 
 
             // --- Destroy this object after 2 seconds. Using a delay because the particle system needs to finish ---
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, 4f);
         }
 
 
@@ -68,7 +68,7 @@ public class ProjectileController : MonoBehaviour
         private void Explode()
         {
             // --- Instantiate new explosion option. I would recommend using an object pool ---
-            GameObject newExplosion = Instantiate(rocketExplosion, transform.position, rocketExplosion.transform.rotation, null);
+            Instantiate(rocketExplosion, transform.position, rocketExplosion.transform.rotation, null);
 
             Collider[] blocks = Physics.OverlapSphere(transform.position, radius);
 

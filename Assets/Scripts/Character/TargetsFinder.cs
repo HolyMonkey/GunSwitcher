@@ -15,7 +15,7 @@ namespace Movement
         
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent<Enemy>(out Enemy enemy))
+            if (other.TryGetComponent(out Enemy enemy))
             {
                 _targets.Add(enemy);
                 enemy.Die += () => OnEnemyDied(enemy);

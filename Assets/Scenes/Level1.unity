@@ -334,6 +334,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 32.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3089977440730520810, guid: 9b140bd576645764f9ac40d28514fc5a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.39962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089977440730520810, guid: 9b140bd576645764f9ac40d28514fc5a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4775420947129615829, guid: 9b140bd576645764f9ac40d28514fc5a, type: 3}
       propertyPath: m_Shadows.m_Bias
       value: 1
@@ -548,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7210229987599721434, guid: 9b140bd576645764f9ac40d28514fc5a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 7210229987599721434, guid: 9b140bd576645764f9ac40d28514fc5a, type: 3}
       propertyPath: m_LocalRotation.x

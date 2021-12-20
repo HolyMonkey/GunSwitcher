@@ -113,7 +113,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 8830674844517494888, guid: 869541fb81c950e45a8b7008b9e2ecbf, type: 2}
 --- !u!1 &244600803517639506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1939,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -7251919399973774151, guid: 03dc28a444fa5b442b3226cff8f0f0ae, type: 2}
 --- !u!1 &244600804169629843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,7 +3755,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -5707191572770155992, guid: 869541fb81c950e45a8b7008b9e2ecbf, type: 2}
 --- !u!1 &244600805361066929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,7 +4208,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 7713349386747275195, guid: 869541fb81c950e45a8b7008b9e2ecbf, type: 2}
 --- !u!1 &1374110628368685392
 GameObject:
   m_ObjectHideFlags: 0
@@ -11092,16 +11092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44db15a1f69a4b7c90af2b8e22c17338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 50
-  _shootDelay: 0.5
-  _targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
   _muzzleFlare: {fileID: 1799483598206608253}
   _bulletPrefab: {fileID: 2712238351802322529, guid: fc870e050c7d6614384a94c5159912ac, type: 3}
   _shootPosition: {fileID: 1799483598150780608}
-  _enemiesTrigger: {fileID: 0}
-  _aim: {fileID: 1799483597441710324}
 --- !u!65 &1799483596761505084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18532,7 +18525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d02c68f46f42219008f8428eeb80c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyAnimation: {fileID: 0}
   _hitTarget: {fileID: 1799483597336450029}
   _ragdoll: {fileID: 1799483598444762014}
   _aim: {fileID: 1799483597441710325}
@@ -18540,6 +18532,7 @@ MonoBehaviour:
   _autoShooting: {fileID: 1799483596761505085}
   _weaponTrigger: {fileID: 1799483596761505084}
   _alive: 1
+  _particleExplosionParts: {fileID: 0}
 --- !u!114 &1799483597441710325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41728,6 +41721,7 @@ MonoBehaviour:
   - {fileID: 1799483596510771052}
   - {fileID: 1799483596906742868}
   - {fileID: 1799483597585461005}
+  ForcePower: 8
 --- !u!1 &1799483598449508569
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PlyerTurner : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<Turn>(out Turn turn))
+        if (other.TryGetComponent(out Turn turn))
         {
             _movement.ChangeDirection(turn.IsTurnedLeft);
             _gunfire.PrepareToShoot(true);

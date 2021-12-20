@@ -52,11 +52,11 @@ public class GunfireController : BulletsCounter
         private void Update()
         {
             // --- If rotate is set to true, rotate the weapon in scene ---
-            if (rotate)
-            {
-                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
-                                                                        + rotationSpeed, transform.localEulerAngles.z);
-            }
+            // if (rotate)
+            // {
+            //     transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
+            //                                                             + rotationSpeed, transform.localEulerAngles.z);
+            // }
 
             // --- Fires the weapon if the delay time period has passed since the last shot ---
             if (autoFire && ((timeLastFired + shotDelay) <= Time.time))
@@ -66,11 +66,11 @@ public class GunfireController : BulletsCounter
             }
 
             // --- Toggle scope based on public variable value ---
-            if(scope && lastScopeState != scopeActive)
-            {
-                lastScopeState = scopeActive;
-                scope.SetActive(scopeActive);
-            }
+            // if(scope && lastScopeState != scopeActive)
+            // {
+            //     lastScopeState = scopeActive;
+            //     scope.SetActive(scopeActive);
+            // }
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ public class GunfireController : BulletsCounter
                     GameObject muzzle = Instantiate(muzzlePrefab, muzzlePosition.transform);
                     Destroy(muzzle, 0.5f);
                     Instantiate(projectilePrefab, muzzlePosition.transform.position,
-                        muzzlePosition.transform.rotation, transform);
+                        muzzlePosition.transform.rotation);
                     BulletCount--;
 
                     if (Swith != null)
@@ -149,5 +149,11 @@ public class GunfireController : BulletsCounter
         public void PrepareToShoot(bool prepareToShoot)
         {
             _prepareToshoot = prepareToShoot;
+
+            if (prepareToShoot)
+            {
+                timeLastFired = Time.time;
+                shotDelay = 1.3f;
+            }
         }
     }
