@@ -23,7 +23,7 @@ namespace Weapon
                 }
 
                 enemy.Die?.Invoke();
-                enemy.AddExplosionForce();
+                enemy.AddExplosionForce(transform.position);
             }
 
             if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))

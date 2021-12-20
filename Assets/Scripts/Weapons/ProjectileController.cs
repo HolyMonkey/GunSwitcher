@@ -81,7 +81,7 @@ public class ProjectileController : MonoBehaviour
                 else if(block.TryGetComponent(out Enemy enemy))
                 {
                     enemy.Die?.Invoke();
-                    enemy.AddExplosionForce?.Invoke();
+                    enemy.AddExplosionForce?.Invoke(transform.position);
                 }
                 
                 if (block.TryGetComponent(out Rigidbody rigidbody))

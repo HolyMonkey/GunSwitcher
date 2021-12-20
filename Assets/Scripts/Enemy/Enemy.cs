@@ -1,13 +1,14 @@
 ﻿using System;
 using _GAME.Common;
 using RootMotion.FinalIK;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
     public Action Die;
-    public UnityAction  AddExplosionForce;
+    public UnityAction <Vector3> AddExplosionForce;
 
     [SerializeField] private Transform _hitTarget;
     [SerializeField] private Ragdoll _ragdoll;
@@ -42,11 +43,13 @@ public class Enemy : MonoBehaviour
         _autoShooting.enabled = false;
     }
 
-    private void AddExplosion()
+    private void AddExplosion(Vector3 bulletTransform)
     {
         if (_particleExplosionParts != null)
-        { 
-            var partsOfEnemy = Instantiate(_particleExplosionParts, transform.position, transform.rotation); 
+        {
+            var partsOfEnemy = Instantiate(_particleExplosionParts, bulletTransform, transform.rotation);
+            partsOfEnemy.transform.rotation =
+                new quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, 0);
             Destroy(partsOfEnemy, 3f);
         }
          
