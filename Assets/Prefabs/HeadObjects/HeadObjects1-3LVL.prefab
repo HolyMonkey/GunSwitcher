@@ -406,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletCount: 30
   Swith: {fileID: 2336948349410761971}
-  _distance: 50
+  _distance: 100
   _shootDelay: 0.06
   _targetLayerMask:
     serializedVersion: 2
@@ -545,8 +545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletCount: 999
   Swith: {fileID: 2336948349410761971}
-  _distance: 100
-  _shootDelay: 0.2
+  _distance: 40
+  _shootDelay: 0.27
   _targetLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -20165,6 +20165,7 @@ MonoBehaviour:
   _health: 200
   _victoryPanel: {fileID: 837732702216710480}
   _fightCanvas: {fileID: 837732702319007618}
+  _victoryConfetty: {fileID: 0}
 --- !u!114 &837732701766206615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24857,7 +24858,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837732701974345536}
-  m_LocalRotation: {x: 0.0000000019449875, y: 0.97410935, z: -0.22607751, w: 0.0000000083804474}
+  m_LocalRotation: {x: -0.000000003368818, y: 0.97410935, z: -0.22607751, w: -0.000000014515362}
   m_LocalPosition: {x: 0.028000355, y: 6.2699995, z: 26.722254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25777,8 +25778,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.1855755, y: 8.89206, z: 19.165943}
-  m_Center: {x: -0.116381645, y: 2.8795443, z: -10.17828}
+  m_Size: {x: 10.1855755, y: 8.89206, z: 22.54881}
+  m_Center: {x: -0.116381645, y: 2.8795443, z: -11.869713}
 --- !u!114 &837732702304084684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28896,10 +28897,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.19
+  m_Radius: 0.45215034
   m_Height: 3.0166388
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5133195, z: 0}
+  m_Center: {x: -0.029937744, y: 1.5133195, z: 0}
 --- !u!54 &837732703106411948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28986,6 +28987,7 @@ MonoBehaviour:
   _health: 150
   _victoryPanel: {fileID: 837732702216710480}
   _fightCanvas: {fileID: 837732702319007618}
+  _victoryConfetty: {fileID: 0}
 --- !u!114 &1074319350056358461
 MonoBehaviour:
   m_ObjectHideFlags: 0

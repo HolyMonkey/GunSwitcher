@@ -33,11 +33,8 @@ namespace Weapon
 
         private void OnDisable()
         {
-            _shooting = null;
             _finder.EnemyFinded -= OnTargetFinded;
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
-            
-            _shooting = null;
         }
 
         private void OnTargetFinded(Enemy enemy)
@@ -110,6 +107,7 @@ namespace Weapon
 
         private void OnNotEnoughTargets()
         {
+            Debug.Log(gameObject);
             _currentTarget = null;
             _aimController.target = null;
             _aimController.weight = 0;
@@ -143,11 +141,6 @@ namespace Weapon
                     _shooting = StartCoroutine(Shooting());
                 }
             }
-        }
-
-        public void OffShooting()
-        {
-            _shooting = null;
         }
     }
 }

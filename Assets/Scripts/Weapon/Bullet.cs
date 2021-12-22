@@ -13,6 +13,11 @@ namespace Weapon
         public Rigidbody Rigidbody => _rigidbody;
         public float Speed => speed;
 
+        private void Start()
+        {
+            Destroy(gameObject, 1f);
+        }
+
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.TryGetComponent(out Enemy enemy))

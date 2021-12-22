@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class FightHealth : MonoBehaviour
@@ -11,6 +12,7 @@ public class FightHealth : MonoBehaviour
     [SerializeField] private int _health;
     [SerializeField] private GameObject _victoryPanel;
     [SerializeField] private GameObject _fightCanvas;
+    [SerializeField] private GameObject _victoryConfetty;
 
         public void TakeDamage(int damage)
     {
@@ -30,10 +32,19 @@ public class FightHealth : MonoBehaviour
             }
             else
             {
-                _victoryPanel.SetActive(true);
-                _fightCanvas.SetActive(false);
                 _animator.SetBool("Die", true);
+                StartCoroutine("WaitForLevelEnd");
             }
         }
+    }
+
+    private IEnumerator WaitForLevelEnd()
+    {
+        _fightCanvas.SetActive(false);
+        Instantiate(_victoryConfetty, transform.position, _victoryConfetty.transform.rotation);
+        
+        yield return new WaitForSeconds(1f);
+        
+        _victoryPanel.SetActive(true);
     }
 }
