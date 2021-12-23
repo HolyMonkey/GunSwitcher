@@ -35,6 +35,7 @@ namespace Weapon
         {
             _finder.EnemyFinded -= OnTargetFinded;
             _finder.NotEnoughTargets -= OnNotEnoughTargets;
+            _shooting = null;
         }
 
         private void OnTargetFinded(Enemy enemy)
@@ -107,10 +108,10 @@ namespace Weapon
 
         private void OnNotEnoughTargets()
         {
-            Debug.Log(gameObject);
             _currentTarget = null;
             _aimController.target = null;
             _aimController.weight = 0;
+            _shooting = null;
         }
 
         private void PickTarget()
@@ -135,7 +136,6 @@ namespace Weapon
             
             if (_currentTarget != null)
             {
-
                 if (_shooting == null)
                 {
                     _shooting = StartCoroutine(Shooting());

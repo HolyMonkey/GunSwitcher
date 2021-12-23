@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
     {
@@ -49,7 +47,7 @@ public class ProjectileController : MonoBehaviour
             Explode();
             projectileMesh.enabled = false;
             targetHit = true;
-            inFlightAudioSource.Stop();
+            //inFlightAudioSource.Stop();
             foreach(Collider col in GetComponents<Collider>())
             {
                 col.enabled = false;
