@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 7142642459671782808}
   speed: 40
-  _hitEffect: {fileID: 6453443686095588971, guid: 2e7fa53e3552b3044bc1c1a100b1a384, type: 3}
+  _hitEffect: {fileID: 19825358, guid: d166c8ca466ba4a42a2c22afdee2d7e1, type: 3}

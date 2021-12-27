@@ -13,6 +13,7 @@ public class FightHealth : MonoBehaviour
     [SerializeField] private GameObject _victoryPanel;
     [SerializeField] private GameObject _fightCanvas;
     [SerializeField] private GameObject _victoryConfetty;
+    [SerializeField] private Transform _confettyPosition;
 
         public void TakeDamage(int damage)
     {
@@ -41,7 +42,7 @@ public class FightHealth : MonoBehaviour
     private IEnumerator WaitForLevelEnd()
     {
         _fightCanvas.SetActive(false);
-        Instantiate(_victoryConfetty, transform.position, _victoryConfetty.transform.rotation);
+        Instantiate(_victoryConfetty, _confettyPosition.transform.position, _victoryConfetty.transform.rotation);
         
         yield return new WaitForSeconds(1f);
         

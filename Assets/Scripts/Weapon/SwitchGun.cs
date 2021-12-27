@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RootMotion.FinalIK;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Weapon;
 
@@ -113,7 +114,7 @@ public class SwitchGun : MonoBehaviour
         {
             if (i == _currentWeaponIndex)
             {
-                DrawButtons(_buttonGuns[i],false, 0.5f);
+                DrawButtons(_buttonGuns[i],false, 0.4f);
             }
             else
             {
@@ -124,7 +125,20 @@ public class SwitchGun : MonoBehaviour
 
     private void DrawButtons(WeaponChangerItem buttonGun,bool enabledButton,  float alpha = 1f)
     {
-        buttonGun.GetComponent<Button>().enabled = enabledButton;
+        var button = buttonGun.GetComponent<Button>();
+        button.enabled = enabledButton;
+        
+       // buttonGun.GetComponent<Button>().enabled = enabledButton;
+        
+        if (enabledButton)
+        {
+            button.transform.localScale = new Vector3(1.1f, 1f, 1f);
+        }
+        else
+        {
+            button.transform.localScale = new Vector3(0.9f, 0.8f, 0.8f);
+        }
+        
         var color1 = buttonGun.GetComponentInChildren<Image>().color;
         color1.a = alpha;
         buttonGun.GetComponentInChildren<Image>().color = color1;
