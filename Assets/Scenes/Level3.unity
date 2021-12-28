@@ -170,6 +170,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 123817971864246296, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 123817971864246296, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
       propertyPath: m_Shadows.m_NormalBias
       value: 0.61
       objectReference: {fileID: 0}
@@ -2705,3 +2709,21 @@ PrefabInstance:
     - {fileID: 381843257277448537, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
     - {fileID: 381843257277448538, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
+--- !u!1 &381843255854419324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 123817971864246303, guid: 1e8a6498c0b919748ba5dbfe9544355c, type: 3}
+  m_PrefabInstance: {fileID: 381843255854419323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &381843255854419325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381843255854419324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UsePipelineSettings: 0
