@@ -136,7 +136,7 @@ namespace Weapon
             
             if (_currentTarget != null)
             {
-                if (_shooting == null)
+                if (_shooting == null && enabled)
                 {
                     _shooting = StartCoroutine(Shooting());
                 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using Movement;
-using RootMotion.FinalIK;
-using UnityEngine;
+﻿using UnityEngine;
 using Weapon;
 
 namespace _GAME.Common

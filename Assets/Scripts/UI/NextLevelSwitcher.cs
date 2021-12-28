@@ -7,6 +7,21 @@ public class NextLevelSwitcher : MonoBehaviour
    
    private int _maxLevel = 10;
 
+   private void Awake()
+   {
+      Debug.Log(PlayerPrefs.GetInt("level"));
+      
+      if (_currentLevel != PlayerPrefs.GetInt("level"))
+      {
+         SceneManager.LoadScene(PlayerPrefs.GetInt("level"));
+      }
+   }
+
+   private void Start()
+   {
+      PlayerPrefs.SetInt("level", _currentLevel);
+   }
+
    public void ContinueLevel()
    {
       if (_currentLevel + 1 >= _maxLevel)
@@ -18,6 +33,7 @@ public class NextLevelSwitcher : MonoBehaviour
          _currentLevel++;
       }
 
+      PlayerPrefs.SetInt("level", _currentLevel);
       SceneManager.LoadScene(_currentLevel);
    }
 }

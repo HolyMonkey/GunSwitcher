@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using RootMotion.FinalIK;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Weapon;
 
@@ -75,16 +74,6 @@ public class SwitchGun : MonoBehaviour
             _currentWeaponIndex = 2;
         }
 
-
-        if (_currentWeaponIndex > _weapons.Count - 1)
-        {
-            _currentWeaponIndex = 0;
-        }
-        else if(_currentWeaponIndex < 0)
-        {
-            _currentWeaponIndex = _weapons.Count - 1;
-        }
-        
         GameObject animationGun = GetGunTemplate();
         Instantiate(animationGun, _gunTransform.transform.position, animationGun.transform.rotation * transform.rotation, _gunCreation);
 
@@ -127,16 +116,14 @@ public class SwitchGun : MonoBehaviour
     {
         var button = buttonGun.GetComponent<Button>();
         button.enabled = enabledButton;
-        
-       // buttonGun.GetComponent<Button>().enabled = enabledButton;
-        
+
         if (enabledButton)
         {
-            button.transform.localScale = new Vector3(1.1f, 1f, 1f);
+            button.transform.localScale = new Vector3(0.9f, 0.8f, 0.8f);
         }
         else
         {
-            button.transform.localScale = new Vector3(0.9f, 0.8f, 0.8f);
+            button.transform.localScale = new Vector3(1.1f, 1f, 1f);
         }
         
         var color1 = buttonGun.GetComponentInChildren<Image>().color;
