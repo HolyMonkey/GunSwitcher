@@ -842,6 +842,18 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.37391767
       objectReference: {fileID: 0}
+    - target: {fileID: 2383813283454684608, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383813283454684608, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273648530707470994, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 3839882972120253512, guid: 18140a166068656489aac108cec81407, type: 3}
       propertyPath: m_LocalScale.z
       value: 70.391914
@@ -849,6 +861,26 @@ PrefabInstance:
     - target: {fileID: 3839882972120253512, guid: 18140a166068656489aac108cec81407, type: 3}
       propertyPath: m_LocalPosition.z
       value: 12.1707
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878325633738627209, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287850681293491998, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483977775759844624, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483977775759844624, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483977775759844624, guid: 18140a166068656489aac108cec81407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 4552947012020988001, guid: 18140a166068656489aac108cec81407, type: 3}
       propertyPath: m_Shadows.m_Type

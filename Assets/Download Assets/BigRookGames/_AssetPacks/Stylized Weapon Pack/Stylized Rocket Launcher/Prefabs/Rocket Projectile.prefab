@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 45
   radius: 9
-  force: 6
+  force: 12
   collisionLayerMask:
     serializedVersion: 2
     m_Bits: 128

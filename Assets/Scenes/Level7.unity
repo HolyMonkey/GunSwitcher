@@ -164,15 +164,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 723896812560420755, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000000083804474
+      value: 0.000000008380449
       objectReference: {fileID: 0}
     - target: {fileID: 723896812560420755, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000019449875
+      value: 0.000000001944988
       objectReference: {fileID: 0}
     - target: {fileID: 723896812560420755, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22607751
+      value: -0.2260775
       objectReference: {fileID: 0}
     - target: {fileID: 723896812560420766, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -766,6 +766,14 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.006646675
       objectReference: {fileID: 0}
+    - target: {fileID: 8318000668590775092, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -44.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318000668590775092, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 128.41
+      objectReference: {fileID: 0}
     - target: {fileID: 8380255058856881232, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_LocalPosition.z
       value: 109
@@ -1009,6 +1017,10 @@ PrefabInstance:
     - target: {fileID: 8727184897537683311, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.18964498
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967914882608390992, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.97
       objectReference: {fileID: 0}
     - target: {fileID: 9053419773223850215, guid: da2ecf70129b2784c88913a648ebe33b, type: 3}
       propertyPath: m_ConnectedAnchor.x
