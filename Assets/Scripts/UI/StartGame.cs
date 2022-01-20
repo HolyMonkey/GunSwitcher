@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +9,13 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField] private List<Button> _buttons;
     public event UnityAction GameStarted;
+
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -25,8 +34,17 @@ public class StartGame : MonoBehaviour
                     _buttons[i].enabled = true;
                 }
             }
-            
-            gameObject.SetActive(false);
+
+            StartCoroutine("WaitUntilAnimationPlay");
         }
+    }
+
+    private IEnumerator WaitUntilAnimationPlay()
+    {
+        _animator.SetTrigger("OnButtonPressed");
+        
+        yield return new WaitForSeconds(0.5f);
+        
+        gameObject.SetActive(false);
     }
 }

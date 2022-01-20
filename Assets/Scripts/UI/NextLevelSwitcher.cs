@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,7 +38,7 @@ public class NextLevelSwitcher : MonoBehaviour
       PlayerPrefs.SetInt("level", _currentLevel);
    }
 
-   public void ContinueLevel()
+   public void ContinueLevel(Animator animator)
    {
       if (_currentLevel + 1 >= _maxLevel)
       {
@@ -49,7 +50,17 @@ public class NextLevelSwitcher : MonoBehaviour
       }
 
       _currentLevelCount++;
+      
+      animator.SetTrigger("OnButtonPressed");
 
+      
+      StartCoroutine("WaitUntilAnimationPlay");
+   }
+
+   private IEnumerator WaitUntilAnimationPlay()
+   {
+      yield return new WaitForSeconds(0.5f);
+      
       PlayerPrefs.SetInt("level", _currentLevel);
       PlayerPrefs.SetInt("levelCount", _currentLevelCount);
       SceneManager.LoadScene(_currentLevel);
